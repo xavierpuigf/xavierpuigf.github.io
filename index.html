@@ -1,1 +1,449 @@
-Empty page
+
+<!-- If you are reading this, you are reading my procrastination -->
+<html>
+<head>
+<title>Xavier Puig</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<style>
+@media screen and (max-device-width: 480px){
+  body{
+      -webkit-text-size-adjust: 100%;
+        }
+        }
+p { font-size : 17px; }
+li {font-size: 17px; padding: 2px;}
+h1 { padding : 0; margin : 0; font-size : 38px; }
+h2 { font-size : 24px; margin : 0; padding : 0; margin-bottom: 10px }
+h3 { margin : 24px 0; }
+body { padding : 0; font-family: 'Lato', sans-serif; font-size : 17px; } 
+.title { width : 800px; margin : 20px auto; color : #000; margin-top : 30px; }
+.title a, .title a:visited {position : relative;}
+.container { width : 1000px; margin : 1px auto; border-radius: 20px; padding : 12px; padding-bottom : 20px; padding-top: 20px; clear:both; }
+.container h2 {
+	padding-bottom: 10px;
+}
+.generalcontainer { min-height: 90%; margin : 0px auto;  width: 1400px; background-color:white; border-radius: 10px; padding-top : 15px; clear:both;}
+
+#bio { height : 250px; position: relative; float : left; width : 500px; }
+#me { border : 0 solid black; margin-bottom : 30px; border-radius : 10px; }
+#sidebar { margin-left:0px; margin-right : 50px; border : 0 solid black; float : left; margin-bottom : 0;}
+
+
+a { text-decoration : none; }
+a:hover { text-decoration : underline; }
+a, a:visited { color : #3366cc; }
+.publication { clear : left; padding-bottom : 20px; }
+.publication-short { padding-left : 120px; }
+.publication p { display: inline-block; margin-top: 20px; margin-bottom: 20px; height : 100px; padding-top : 0px; vertical-align: top}
+.publication-short p { height : 0; }
+.publication strong a { color : #000; text-decoration  :none; }
+.publication strong a:hover { text-decoration : underline; }
+.publication .links { position : relative; top : 15px }
+.publication .links a { margin-right : 15px; }
+.publication .links strong { margin-right : 20px; }
+.publication img { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%;}
+.publication .imgcont { display: inline-block; width: 200px; margin-right: 20px; margin-top: 20px; vertical-align: top}
+.publication .papercont { display: inline-block; margin-right: 20px; margin-top: 20px; vertical-align: top}
+
+
+
+.press { display : inline-block; padding : 5px; height : 40px;}
+.press a img { border : 3px solid #fff; border-radius : 10px; padding : 4px; }
+.press a img:hover { border-color : #3366cc; }
+.talk { display : inline-block; text-align : center; padding : 0 15px;}
+.talk img { margin-bottom : 5px; }
+.talk a img { border : 3px solid #fff; border-radius : 10px; padding : 5px; }
+.talk a img:hover { border-color : #3366cc; }
+.codelogo { margin-right : 50px; float : left; border : 0;}
+.code { padding-bottom : 10px; vertical-align :middle; height : 150px !important; width : 550px;} 
+.code .download a { display : block; margin : 0 30px 0 0; float : left;}
+.code strong { display : block; padding-bottom : 10px;}
+.code strong a { color : #000; }
+.code img { border-radius : 5px; }
+.external a { margin : 0 10px; }
+.external a.first { margin : 0 10px 0 0; }
+.news { border-style: solid; border-width: 1px; border-color: gray; padding: 10px;}
+.news img { height: 40px; width: auto; padding: 5px; padding-left: 10px}
+
+.new { background-color : #cc0000; color:white; border-radius : 5px; padding : 2px; font-size : 14px; margin : 0 10px;}
+
+.newstable {
+	#border-style: solid;
+	border-spacing: 0px 5px;
+	border-collapse: separate;
+	border-width: 1px;
+}
+
+table td {
+	vertical-align: text-top;
+}
+
+.authors {
+	padding-top: 5px;
+	padding-bottom: 3px;
+	color: rgb(120,120,120)
+}
+.authors .me {
+	color: black;
+	text-decoration: underline
+}
+</style>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	     })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91301919-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<link rel="shortcut icon" href="/files/assets/images/favicon.ico" />
+
+</head>
+<body style="background-color:whitesmoke;">
+<div class="generalcontainer">
+    <div class="title">
+        <div id="sidebar"><img src="media/xavi.jpg" id="me" width="225" itemprop="photo"></div>
+
+        <div id="bio">
+            <div style="position:absolute;top:28px;">
+                <h1><span itemprop="name">Xavier Puig</span></h1>
+
+                <p style="line-height:23px;">
+                Research Scientist at FAIR. <br> 
+                Email: <a href="mailto:xavierpuig@meta.com">xavierpuig@meta.com</a><br>
+                Office: 181 Freemont St, San Francisco. 
+                <p class="external">
+				<a href="documents/CV_Xavier.pdf" class="first">Resume</a> &bull; 
+				<a href="https://scholar.google.com/citations?user=GbaikvkAAAAJ">Google Scholar</a> &bull; 
+				<a href="https://www.linkedin.com/in/xavierpuigf">LinkedIn</a> &bull;
+				<a href="https://github.com/xavierpuigf">GitHub</a>
+				</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div style="text-align: justify" class="container">
+        <h2>About Me</h2>
+        <p> I am a Research Scientist at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, working on Embodied AI. Previously, I completed my Ph.D. at the <a href="http://www.csail.mit.edu/"> Computer Science and Artificial Intelligence Laboratory (CSAIL) </a> of <a href="http://web.mit.edu">MIT</a>, advised by Professor <a href="http://web.mit.edu/torralba/www/"> Antonio Torralba</a>. Before joining MIT, I obtained a double degree in Computer Science and Telecommunications at the <a href="http://www.cfis.upc.edu/"> CFIS </a> program of <a href="http://www.upc.edu/"> UPC</a>. 
+        <!-- I am funded by La Caixa Fellowship.  -->
+        </p>
+        <!--<p>In the fields of computer vision and machine learning, my research investigates Predictive Vision with the goal to develop methods that anticipate events in the future. My work builds algorithms that learn from large amounts of raw data in order to create rich predictive models.</p> -->
+        
+	<p> I am interested in building agents that can assist and collaborate with humans. My research focuses in developing agents that can understand and anticipate human goals, and coordinate with them in performing complex tasks. I also study how to represent humans in simulation environments, allowing agents to interact with humans safely before deploying them in the real world. </p>  
+
+    </div>
+    <div class="container">
+    <h2>News</h2>
+
+<!--     <ul style="list-style-type: none; padding-left: 0px">
+	<li> <b> January 2022:</b> We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social AI Virtual Gathering </a>, at ICLR 2021. </li>
+	<li> <b> April 2021:</b> We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social AI Virtual Gathering </a>, at ICLR 2021. </li>
+        <li> <b> February 2021:</b> We are organizing the <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence in Humans and Robots Workshop</a>, to be held at <a href="http://www.icra2021.org/">ICRA'2021</a>. </li>
+        <li> <b> January 2021:</b> <a href="https://openreview.net/forum?id=w_7JMpGZRh0">Watch-And-Help</a> was accepted to <a href="https://iclr.cc/Conferences/2021/">ICLR'2021</a> as a Spotlight presentation.</li>
+	<li> <b> November 2020:</b> <a href="https://arxiv.org/abs/2010.09890">Watch-And-Help</a> was accepted to the <a href="https://www.cooperativeai.com/">Cooperative AI Workshop at NeurIPS 2020</a> as a Best paper award.</li>
+    	<li> <b> October 2020:</b> We released the <a href="https://github.com/xavierpuigf/watch_and_help">code</a> for our <b>Watch-And-Help</b> paper.</li>
+	<li> <b> September 2020:</b> We released the <a href="https://github.com/xavierpuigf/virtualhome">new version of VirtualHome</a>, as well as the <a href="https://github.com/xavierpuigf/virtualhome_unity">Unity Source Code</a>. </li>
+    </ul>
+    <br>	
+ -->
+    <table class="newstable">
+
+	<tr> 
+	<td>  <b> Oct. 2022:</b> I joined the Embodied AI team at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, to work in human-centered Embodied Intelligence. 
+	    </td>
+	</tr>
+
+	<tr> 
+	<td>  <b> Sep. 2022:</b> 
+		I defended my Ph.D. Thesis. 
+	    </td>
+	</tr>
+	<tr> 
+
+	<tr> 
+	<td>  <b> Jan. 2022:</b>   <a href="https://ali-design.github.io/GenRep/"> GenRep </a> was accepted to ICLR 2022. 
+	    </td>
+	</tr>
+	<tr> 
+	<td> <b> Apr. 2021:</b>  We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/"> Social AI Virtual Gathering </a>, at ICLR 2021. 
+	    </td>
+	</tr>
+	<tr> <td> <b> Feb. 2021:</b>  </div> We are organizing the <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence in Humans and Robots Workshop</a>, to be held at <a href="http://www.icra2021.org/">ICRA'2021</a>. 
+		</td>
+	</tr>
+	<tr> <td> <b> Jan. 2021:</b>  <a href="https://openreview.net/forum?id=w_7JMpGZRh0">Watch-And-Help</a> was accepted to <a href="https://iclr.cc/Conferences/2021/">ICLR'2021</a> as a Spotlight presentation.
+		</td>
+	</tr>
+	<tr> <td> <b> Nov. 2020:</b>   <a href="https://arxiv.org/abs/2010.09890">Watch-And-Help</a> was accepted to the <a href="https://www.cooperativeai.com/">Cooperative AI Workshop at NeurIPS 2020</a> as a Best paper award.
+		</td>
+	</tr>
+	<tr><td> <b> Oct. 2020:</b>  We released the <a href="https://github.com/xavierpuigf/watch_and_help">code</a> for our <b>Watch-And-Help</b> paper.
+		</td>
+	</tr>
+	<tr> <td><b> Sep. 2020:</b>  We released the <a href="https://github.com/xavierpuigf/virtualhome">new version of VirtualHome</a>, as well as the <a href="https://github.com/xavierpuigf/virtualhome_unity">Unity Source Code</a>. 
+		</td>
+	</tr>
+    </table>
+	
+    </div>
+    <div class="container">
+    <h2>Publications</h2>
+
+        <div class="publication">
+			<div class="imgcont">
+			    <img src="media/icons/teaser_lmagent.png" class="publogo">
+			</div>
+			<div class="papercont">
+				<strong>  Pre-Trained Language Models for Interactive Decision-Making </strong> <br> 
+
+
+				<div class="authors">
+					<span> Shuang Li
+					</span>,<span class="me"> Xavier Puig
+					</span>,<span> Chris Paxton
+					</span>,<span> Yilun Du
+					</span>,<span> Clinton Wang
+					</span>,<span> Linxi Fan
+					</span>,<br><span> Tao Chen
+					</span>,<span> De-An Huang
+					</span>,<span> Ekin Akyurek
+					</span>,<span> Anima Anandkumar
+					</span>,<span> Jacob Andreas
+					</span>,<br><span> Igor Mordatch
+					</span>,<span> Antonio Torralba
+					</span>,<span> Yuke Zhu </span>
+				</div>
+
+				In Proc. Neural Information Processing Systems  (NeurIPS), 2022 -  <span style="color:red"> Oral </span> <br>
+				<br>
+				<span class="links">
+					<a href="https://arxiv.org/abs/2202.01771">Paper</a> 
+					<a href="https://github.com/ShuangLI59/Pre-Trained-Language-Models-for-Interactive-Decision-Making">Code</a> 
+					<a href="https://shuangli-project.github.io/Pre-Trained-Language-Models-for-Interactive-Decision-Making/">Webpage</a> 
+				</span>
+			</div>
+        </div>
+        <div class="publication">
+			<div class="imgcont">
+			    <img src="media/icons/teaser_genrep.png" class="publogo">
+			</div>
+			<div class="papercont">
+				<strong> Generative Models as a Data Source for Multiview Representation Learning </strong> <br> 
+
+
+				<div class="authors">
+					<span> Ali Jahanian</span>,
+					<span class="me">Xavier Puig</span>,
+					<span> Yonglong Tian</span>,
+					<span> Phillip Isola</span>.
+				</div>
+				International Conference on Learning Representations (ICLR), 2022 <br>
+				<span class="links">
+					<a href="https://arxiv.org/pdf/2106.05258.pdf">Paper</a> 
+					<a href="https://github.com/ali-design/GenRep">Code</a> 
+					<a href="https://ali-design.github.io/GenRep/">Webpage</a> 
+				</span>
+			</div>
+        </div>
+
+        <div class="publication">
+			<div class="imgcont">
+			    <img src="media/icons/multiagent.gif" class="publogo">
+			</div>
+			<div class="papercont">
+				<strong> Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration </strong> <br> 
+
+
+				<div class="authors">
+					<span class="me">Xavier Puig</span>,
+					<span> Tianmin Shu</span>,
+					<span> Shuang Li</span>,
+					<span> Ziling Wang</span>,
+					<span> Josh Tenenbaum</span>,
+					<span> Sanja Fidler</span>,
+					<span>Antonio Torralba</span>.
+				</div>
+				Cooperative AI Workshop at NeurIPS, 2020 -  <span style="color:red"> Best paper award </span><br>
+				International Conference on Learning Representations (ICLR), 2021 -  <span style="color:red"> Spotlight </span><br>
+				<span class="links">
+					<a href="https://arxiv.org/abs/2010.09890">Paper</a> 
+					<a href="https://github.com/xavierpuigf/watch_and_help">Code</a> 
+					<a href="http://virtual-home.org/watch_and_help">Webpage</a> 
+				</span>
+			</div>
+        </div>
+        <div class="publication">
+			<div class="imgcont">
+			    <img src="media/icons/env_program.png" class="publogo">
+			</div>
+			<div class="papercont">
+			<strong>Synthesizing Environment-Aware Activities via Activity Sketches</strong> <br> 
+
+			<div class="authors">
+				<span>Andrew Liao*</span>,
+				<span class="me">Xavier Puig*</span>,
+				<span>Marko Boben</span>,
+				<span>Antonio Torralba</span>.
+				<span>Sanja Fidler</span>,
+			</div>
+			In Proc. Computer Vision and Pattern Recognition (CVPR), 2019.  <br>
+
+			<span class="links">
+				<a href="http://virtual-home.org/paper/env_program.pdf">Paper</a> 
+				<a href="http://virtual-home.org/paper/env_program.pdf">Code</a> 
+				<a href="https://andrewliao11.github.io/project/env-program/">Webpage</a> 
+			</span>
+			</div>
+        </div>
+        <div class="publication">
+			<div class="imgcont">
+			<img src="media/icons/cover_sceneparsing.jpg" class="publogo">
+			</div>
+			<div class="papercont">
+			<strong>Semantic Understanding of Scenes through ADE20K Dataset</a></strong> <br> 
+
+			<div class="authors">
+				<span>Bolei Zhou</span>,
+				<span>Hang Zhao</span>,
+				<span class="me">Xavier Puig</span>,
+				<span>Tete Xiao</span>,
+				<span>Sanja Fidler</span>,
+				<span>Adela Barriuso</span>,
+				<span>Antonio Torralba</span>.
+			</div>
+ 
+			International Journal on Computer Vision (IJCV), 2018.  <br>
+			<span class="links">
+				<a href="https://people.csail.mit.edu/xavierpuig/documents/publications/ADE20K_IJCV.pdf">Paper</a> 
+				<a href="http://groups.csail.mit.edu/vision/datasets/ADE20K/">Dataset</a> 
+				<a href="http://sceneparsing.csail.mit.edu">Benchmark Page</a> 
+				<a href="http://sceneparsing.csail.mit.edu/index_challenge.html">Challenge Page</a>  
+				<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a> 
+				<a href="http://scenesegmentation.csail.mit.edu">Demo</a> 
+			</span>
+			</div>
+        </div>
+        <div class="publication">
+			<div class="imgcont">
+			<img src="media/icons/virtualhome.png" class="publogo" width="100" >
+			</div>
+			<div class="papercont">
+			<strong>VirtualHome: Simulating Household Activities via Programs</a></strong> <br> 
+			<div class="authors">
+
+			<span class="me">Xavier Puig*</span>,
+			<span>Kevin Ra*</span>,
+			<span>Marko Boben*</span>,
+			<span>Jiaman Li</span>,
+			<span>Tingwu Wang</span>,
+			<span>Sanja Fidler</span>,
+			<span>Antonio Torralba</span>,
+			</div>
+
+			In Proc. Computer Vision and Pattern Recognition (CVPR), 2018 -  <span style="color:red"> Oral </span> <br>
+			<span class="links">
+				<a href="https://arxiv.org/pdf/1806.07011.pdf">Paper</a> 
+				<a href="http://virtual-home.org">Webpage</a> 
+				<a data-toggle="collapse" data-target="#mediavirtualhome">Press</a> 
+				<a href="https://www.youtube.com/watch?v=BB5-N9AIqP8">Talk</a> 
+			</span>
+
+			</div>
+				<div id="mediavirtualhome" class="collapse news" style="margin-top: 10px">
+					<a href="http://news.mit.edu/2018/mit-csail-teaching-chores-artificial-agent-0530"><img src='media/news/mit.png'></a>
+					<a href="http://www.bbc.com/news/av/technology-44319044/the-robots-taking-on-your-housework"><img src='media/news/bbc.png'></a>
+					<a href="https://www.wired.com/story/how-to-get-a-robot-to-one-day-do-your-chores/"><img src='media/news/wired.png'></a>
+					<a href="https://www.fastcompany.com/40578876/these-researchers-found-an-easier-way-to-teach-robots-housework"><img src='media/news/fastco.png'></a>
+					<a href="http://www.gizmodo.co.uk/2018/05/researchers-are-training-a-robot-butler-to-do-the-chores-you-hate-in-a-sims-inspired-virtual-house/"><img src='media/news/gizmodo.png'></a>
+
+				</div>
+        </div>
+        <div class="publication">
+			<div class="imgcont">
+			<img src="media/icons/openvoc.png" class="publogo">
+			</div>
+			<div class="papercont">
+			<strong>Open Vocabulary Scene Parsing</a></strong> <br> 
+			<div class="authors">
+				<span>Hang Zhao</span>,
+				<span class="me">Xavier Puig</span>,
+				<span>Bolei Zhou</span>,
+				<span>Sanja Fidler</span>,
+				<span>Antonio Torralba</span>.
+			</div>
+			 In Proc. International Conference in Computer Vision (ICCV), 2017.  <br>
+			<span class="links">
+				<a href="https://arxiv.org/pdf/1703.08769.pdf">Paper</a> 
+				<a href="http://sceneparsing.csail.mit.edu/openvoc/">Page</a> 
+			</span>
+			</div>
+        </div>
+
+        <div class="publication">
+			<div class="imgcont">
+			<img src="media/icons/cover_sceneparsing_cvpr2017.png" class="publogo" >
+			</div>
+			<div class="papercont">
+			<strong>Scene Parsing through ADE20K Dataset</strong> <br> 
+			<div class="authors">
+				<span>Bolei Zhou</span>,
+				<span>Hang Zhao</span>,
+				<span class="me">Xavier Puig</span>,
+				<span>Sanja Fidler</span>,
+				<span>Adela Barriuso</span>,
+				<span>Antonio Torralba</span>.
+			</div>
+			In Proc. Computer Vision and Pattern Recognition (CVPR), 2017. <br>
+			<span class="links">
+				<a href="https://people.csail.mit.edu/xavierpuig/documents/publications/scene-parse-camera-ready.pdf">Paper</a> 
+				<a href="http://groups.csail.mit.edu/vision/datasets/ADE20K/">Dataset</a> 
+				<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a> 
+				<a href="http://scenesegmentation.csail.mit.edu">Demo</a> 
+			</span>
+			</p>
+        </div>
+</div>
+
+<div class="container">
+    <h2>Experience</h2>
+    <ul>
+
+        <li> 2022.10 - present. Research Scientist at FAIR </li>
+        <li> 2016.9 - 2022.9. Research Assistant, MIT Computer Science and Artificial Intelligence Laboratory <br> Advised by Prof. Antonio Torralba </a> </li>
+        <li> 2019.6 - 2019.8. Research Intern, Google Cambridge working in Contrastive Learning <br> Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna </a> </li>
+        <li> 2017.6 - 2017.8. Research Intern, Google Seattle, working in Mobile Computer Vision and Adaptive Inference. <br> Advised by Li Zhang, Yukun Zhu, Maxwell Collins </li>
+        
+    </ul>
+
+</div>
+
+<div class="container">
+    <h2>Professional Service</h2>
+    <ul>
+        <li> Conference/Journal Reviewer <br> CVPR 2018, 2020; ICCV 2019, 2021 (Outstanding Reviewer); ECCV 2020; NeurIPS 2020, 2021; TVCG; IROS 2021; IRJC 2021</li>
+        <li> Workshop Organizer <br> <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence Workshop </a>, ICRA 2021 <br> <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social Intelligence Gathering </a>, ICLR 2021. <br> <a href="http://www.robustvision.net/">Robust Vision Challenge Workshop</a>, ECCV 2020. </li>
+        <li> Co-chair of the <a href="https://sites.google.com/view/visionseminar"> MIT Vision Seminar</a> (2018-2019) and Chair (2019-2021) 
+    </ul>
+
+</div>
+<br>
+</div>
+<br>
+<footer style="height: 60px" class="page-footer font-small blue">
+    <div class="footer-copyright text-center py-3">
+	<span style="color: gray; margin: 20px">
+	    Copyright &copy; 2018 - 2020
+	</span>
+	<a href="http://accessibility.mit.edu "> Accessibility </a>
+    </div>
+</footer>
+</body>
+</html>
