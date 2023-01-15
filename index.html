@@ -1,33 +1,102 @@
 
-<!-- If you are reading this, you are reading my procrastination -->
+
+ <!-- If you are reading this, you are reading my procrastination -->
 <html>
 <head>
 <title>Xavier Puig</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
 <style>
-@media screen and (max-device-width: 480px){
-  body{
-      -webkit-text-size-adjust: 100%;
-        }
-        }
-p { font-size : 17px; }
+
+:root {
+  --link: #1e90ff;
+  --title: #ffffff;
+  --bkg: #F7F7FF;
+  --textc: #323031;
+  --headerc: #22333B; /* #7B9E87;*/
+  --urlcolor: #66A182; /*#F7B05B*/
+}
+.aboutme p { font-size : 17px; margin: 0 0 25px }
+p { font-size : 17px;  }
 li {font-size: 17px; padding: 2px;}
 h1 { padding : 0; margin : 0; font-size : 38px; }
 h2 { font-size : 24px; margin : 0; padding : 0; margin-bottom: 10px }
 h3 { margin : 24px 0; }
-body { padding : 0; font-family: 'Lato', sans-serif; font-size : 17px; } 
-.title { width : 800px; margin : 20px auto; color : #000; margin-top : 30px; }
+body { padding : 0; font-family: 'Lato', sans-serif; font-size : 17px; color:var(--textc) } 
+.titlesec {background-color:var(--headerc)}
+.title {overflow:  auto; width : 100%; margin : 0px auto; color : #000; padding-top : 30px;  max-width:  800px }
 .title a, .title a:visited {position : relative;}
-.container { width : 1000px; margin : 1px auto; border-radius: 20px; padding : 12px; padding-bottom : 20px; padding-top: 20px; clear:both; }
+.container { width: 95%; max-width : 1000px; border-radius: 20px; padding : 12px; padding-bottom : 30px; padding-top: 30px; clear:both; }
 .container h2 {
 	padding-bottom: 10px;
 }
-.generalcontainer { min-height: 90%; margin : 0px auto;  width: 1400px; background-color:white; border-radius: 10px; padding-top : 15px; clear:both;}
 
-#bio { height : 250px; position: relative; float : left; width : 500px; }
+
+@media screen and (max-device-width: 480px){
+  	body{
+      	-webkit-text-size-adjust: 100%;
+   	}
+   	.title {
+   		display:  block;
+   		width: 100%;
+   	}
+   	#sidebar {
+   		width: 100%;
+   		float:  none;
+   	}
+   	.title #sidebar img {
+   		width:  125;
+   		margin:  auto;
+   		display:  block;
+   		marigin-bottom:  0px;
+   	}
+   	.title #bio {
+   		width:  100%;
+   		text-align: center;
+   	}
+
+   	#bio h1 span {
+   		font-size: 28px;
+   	}
+ }
+
+div .aboutme {
+	background: #ffffff;
+}
+
+/*div .containerews {
+	background: #ffffff;
+}
+*/
+div .containerexp {
+	background: #ffffff;
+}
+
+div .containerexp {
+	background: #ffffff;
+}
+
+div .containerpub {
+	background: #ffffff;
+}
+
+
+div .profservice {
+	background: #ffffff;
+}
+
+td.date {
+	font-weight: bold
+}
+
+.generalcontainer { min-height: 90%; margin : 0px auto;  width: 100%; background-color:var(--bkg); border-radius: 10px; clear:both; color:var(--textc)}
+
+#bio { height : 250px; position: relative; float : left; width : 500px; color:var(--bkg) }
+#bio a { color:var(--urlcolor)}
 #me { border : 0 solid black; margin-bottom : 30px; border-radius : 10px; }
 #sidebar { margin-left:0px; margin-right : 50px; border : 0 solid black; float : left; margin-bottom : 0;}
 
@@ -44,9 +113,9 @@ a, a:visited { color : #3366cc; }
 .publication .links { position : relative; top : 15px }
 .publication .links a { margin-right : 15px; }
 .publication .links strong { margin-right : 20px; }
-.publication img { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%;}
+.publication img { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%; border: 1.5px solid var(--textc);}
 .publication .imgcont { display: inline-block; width: 200px; margin-right: 20px; margin-top: 20px; vertical-align: top}
-.publication .papercont { display: inline-block; margin-right: 20px; margin-top: 20px; vertical-align: top}
+.publication .papercont { display: inline-block; margin-right: 20px; margin-top: 20px; vertical-align: top; max-width: 70%}
 
 
 
@@ -75,6 +144,17 @@ a, a:visited { color : #3366cc; }
 	border-spacing: 0px 5px;
 	border-collapse: separate;
 	border-width: 1px;
+}
+
+.experiencetable {
+	#border-style: solid;
+	border-spacing: 0px 5px;
+	border-collapse: separate;
+	border-width: 1px;
+}
+
+.experiencetable tr {
+	height:  50px;
 }
 
 table td {
@@ -108,39 +188,58 @@ table td {
 </head>
 <body style="background-color:whitesmoke;">
 <div class="generalcontainer">
+    <div class="titlesec">
     <div class="title">
-        <div id="sidebar"><img src="media/xavi.jpg" id="me" width="225" itemprop="photo"></div>
+    	<div class="cont">
+	        <div id="sidebar"><img src="media/xavi.jpg" id="me" width="225" itemprop="photo"></div>
 
-        <div id="bio">
-            <div style="position:absolute;top:28px;">
-                <h1><span itemprop="name">Xavier Puig</span></h1>
+	        <div id="bio">
+	            <div style="position:absolute;top:28px;">
+	                <h1 style="padding-bottom: 6px"><span itemprop="name">Xavier Puig</span></h1>
 
-                <p style="line-height:23px;">
-                Research Scientist at FAIR. <br> 
-                Email: <a href="mailto:xavierpuig@meta.com">xavierpuig@meta.com</a><br>
-                Office: 181 Freemont St, San Francisco. 
-                <p class="external">
-				<a href="documents/CV_Xavier.pdf" class="first">Resume</a> &bull; 
-				<a href="https://scholar.google.com/citations?user=GbaikvkAAAAJ">Google Scholar</a> &bull; 
-				<a href="https://www.linkedin.com/in/xavierpuigf">LinkedIn</a> &bull;
-				<a href="https://github.com/xavierpuigf">GitHub</a>
-				</p>
-            </div>
-        </div>
+	                <p style="line-height:30px;">
+			<span> Research Scientist at FAIR </span> <br> 
+			</p>
+
+	                <p style="line-height:22px;">
+	                <a href="mailto:xavierpuig@meta.com">xavierpuig@meta.com</a><br>
+	                181 Freemont St, San Francisco
+			</p>
+	                <p class="external">
+					<a href="documents/CV_Xavier.pdf" class="first">Resume</a> &bull; 
+					<a href="https://scholar.google.com/citations?user=GbaikvkAAAAJ">Google Scholar</a> &bull; 
+					<a href="https://www.linkedin.com/in/xavierpuigf">LinkedIn</a> &bull;
+					<a href="https://github.com/xavierpuigf">GitHub</a>
+					</p>
+	            </div>
+	        </div>
+    	</div>
+    </div>
 
     </div>
 
-    <div style="text-align: justify" class="container">
-        <h2>About Me</h2>
-        <p> I am a Research Scientist at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, working on Embodied AI. Previously, I completed my Ph.D. at the <a href="http://www.csail.mit.edu/"> Computer Science and Artificial Intelligence Laboratory (CSAIL) </a> of <a href="http://web.mit.edu">MIT</a>, advised by Professor <a href="http://web.mit.edu/torralba/www/"> Antonio Torralba</a>. Before joining MIT, I obtained a double degree in Computer Science and Telecommunications at the <a href="http://www.cfis.upc.edu/"> CFIS </a> program of <a href="http://www.upc.edu/"> UPC</a>. 
-        <!-- I am funded by La Caixa Fellowship.  -->
-        </p>
-        <!--<p>In the fields of computer vision and machine learning, my research investigates Predictive Vision with the goal to develop methods that anticipate events in the future. My work builds algorithms that learn from large amounts of raw data in order to create rich predictive models.</p> -->
-        
-	<p> I am interested in building agents that can assist and collaborate with humans. My research focuses in developing agents that can understand and anticipate human goals, and coordinate with them in performing complex tasks. I also study how to represent humans in simulation environments, allowing agents to interact with humans safely before deploying them in the real world. </p>  
+    <div class="aboutme">
+	    <div style="text-align: justify" class="container" >
+		<h2>About Me</h2>
+		<p> I am a Research Scientist at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, working on Embodied AI. Previously, I completed my Ph.D. at the <a href="http://www.csail.mit.edu/"> Computer Science and Artificial Intelligence Laboratory (CSAIL) </a> of <a href="http://web.mit.edu">MIT</a>, advised by Professor <a href="http://web.mit.edu/torralba/www/"> Antonio Torralba</a>. Before that, I obtained a double degree in Computer Science and Telecommunications at the <a href="http://www.cfis.upc.edu/"> CFIS </a> program of <a href="http://www.upc.edu/"> UPC</a>. 
+		<!-- I am funded by La Caixa Fellowship.  -->
+		</p>
+		<!--<p>In the fields of computer vision and machine learning, my research investigates Predictive Vision with the goal to develop methods that anticipate events in the future. My work builds algorithms that learn from large amounts of raw data in order to create rich predictive models.</p> -->
+		<p> 
+		I am interested in building agents that can assist and collaborate with humans. My research focuses in developing agents that can understand and anticipate human goals, and coordinate with them in performing complex tasks. I also study how to represent humans in simulation environments, including generating realistic motions and plausible high-level behaviors.
+		</p>
+		<p>
+		<strong>
+		If you are interested in these areas, and would like to collaborate, or intern in my team, reach out!
+		</strong>
 
+
+		</p>
+
+	    </div>
     </div>
-    <div class="container">
+    <div class="containerews">
+	    <div class="container">
     <h2>News</h2>
 
 <!--     <ul style="list-style-type: none; padding-left: 0px">
@@ -166,7 +265,6 @@ table td {
 		I defended my Ph.D. Thesis. 
 	    </td>
 	</tr>
-	<tr> 
 
 	<tr> 
 	<td>  <b> Jan. 2022:</b>   <a href="https://ali-design.github.io/GenRep/"> GenRep </a> was accepted to ICLR 2022. 
@@ -194,9 +292,31 @@ table td {
     </table>
 	
     </div>
-    <div class="container">
+</div>
+<div class="containerpub">
+ <div class="container">
     <h2>Publications</h2>
+            <div class="publication">
+            <div class="imgcont">
+                <img src="media/icons/teaser_NOPA.png" class="publogo">
+            </div>
+            <div class="papercont">
+                <strong> NOPA: Neurally-guided Online Probabilistic Assistance
+                    for Building Socially Intelligent Home Assistants </strong> <br> 
 
+
+                <div class="authors">
+                    <span class="me"> Xavier Puig* </span>,
+                    <span>Tianmin Shu*</span>,
+                    <span> Josh Tenenbaum </span>,
+                    <span> Antonio Torralba </span>.
+                </div>
+                 In Submission <br>
+                <span class="links">
+                    <a href="documents/publications/NOPA.pdf">Paper</a> 
+                </span>
+            </div>
+        </div>
         <div class="publication">
 			<div class="imgcont">
 			    <img src="media/icons/teaser_lmagent.png" class="publogo">
@@ -223,7 +343,6 @@ table td {
 				</div>
 
 				In Proc. Neural Information Processing Systems  (NeurIPS), 2022 -  <span style="color:red"> Oral </span> <br>
-				<br>
 				<span class="links">
 					<a href="https://arxiv.org/abs/2202.01771">Paper</a> 
 					<a href="https://github.com/ShuangLI59/Pre-Trained-Language-Models-for-Interactive-Decision-Making">Code</a> 
@@ -411,28 +530,51 @@ table td {
 			</p>
         </div>
 </div>
-
-<div class="container">
-    <h2>Experience</h2>
-    <ul>
-
-        <li> 2022.10 - present. Research Scientist at FAIR </li>
-        <li> 2016.9 - 2022.9. Research Assistant, MIT Computer Science and Artificial Intelligence Laboratory <br> Advised by Prof. Antonio Torralba </a> </li>
-        <li> 2019.6 - 2019.8. Research Intern, Google Cambridge working in Contrastive Learning <br> Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna </a> </li>
-        <li> 2017.6 - 2017.8. Research Intern, Google Seattle, working in Mobile Computer Vision and Adaptive Inference. <br> Advised by Li Zhang, Yukun Zhu, Maxwell Collins </li>
-        
-    </ul>
-
+    </div>
 </div>
 
-<div class="container">
-    <h2>Professional Service</h2>
-    <ul>
-        <li> Conference/Journal Reviewer <br> CVPR 2018, 2020; ICCV 2019, 2021 (Outstanding Reviewer); ECCV 2020; NeurIPS 2020, 2021; TVCG; IROS 2021; IRJC 2021</li>
-        <li> Workshop Organizer <br> <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence Workshop </a>, ICRA 2021 <br> <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social Intelligence Gathering </a>, ICLR 2021. <br> <a href="http://www.robustvision.net/">Robust Vision Challenge Workshop</a>, ECCV 2020. </li>
-        <li> Co-chair of the <a href="https://sites.google.com/view/visionseminar"> MIT Vision Seminar</a> (2018-2019) and Chair (2019-2021) 
-    </ul>
+<div class="containerexp">
+	<div class="container">
+	    <h2>Experience</h2>
 
+	    <table class="experiencetable">
+
+		<tr> 
+			<td class="date" style="width:140px"> 2022.10 - Present: </td> <td> Research Scientist at FAIR <br> Working on the Embodied AI Team </a> </td>
+		</tr>
+		
+		<tr> 
+			<td class="date" style="width:140px"> 2016.9 - 2022.9: </td> <td> Research Assistant, MIT Computer Science and Artificial Intelligence Laboratory <br> Advised by Prof. Antonio Torralba </a> </td>
+
+		</tr>
+
+		<tr> 
+			<td class="date" style="width:140px"> 2019.6 - 2019.8: </td> <td> Research Intern, Google Cambridge working in Contrastive Learning <br> Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna </a> </td>
+		</tr>
+
+		<tr> 
+			<td class="date" style="width:140px"> 2017.6 - 2017.8: </td> <td> Research Intern, Google Seattle, working in Mobile Computer Vision and Adaptive Inference. <br> Advised by Li Zhang, Yukun Zhu, Maxwell Collins </td>
+		</tr>
+	    </table>
+	    <ul>
+
+	        
+	    </ul>
+
+	</div>
+</div>
+<div>
+<div class="profservice">
+	
+	<div class="container">
+	    <h2>Professional Service</h2>
+	    <ul>
+	        <li> Conference/Journal Reviewer <br> CVPR 2018, 2020; ICCV 2019, 2021 (Outstanding Reviewer); ECCV 2020; NeurIPS 2020, 2021; TVCG; IROS 2021; IRJC 2021</li>
+	        <li> Workshop Organizer <br> <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence Workshop </a>, ICRA 2021 <br> <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social Intelligence Gathering </a>, ICLR 2021. <br> <a href="http://www.robustvision.net/">Robust Vision Challenge Workshop</a>, ECCV 2020. </li>
+	        <li> Co-chair of the <a href="https://sites.google.com/view/visionseminar"> MIT Vision Seminar</a> (2018-2019) and Chair (2019-2021) 
+	    </ul>
+
+	</div>
 </div>
 <br>
 </div>
@@ -440,7 +582,7 @@ table td {
 <footer style="height: 60px" class="page-footer font-small blue">
     <div class="footer-copyright text-center py-3">
 	<span style="color: gray; margin: 20px">
-	    Copyright &copy; 2018 - 2020
+	    Copyright &copy; 2018 - 2023
 	</span>
 	<a href="http://accessibility.mit.edu "> Accessibility </a>
     </div>
