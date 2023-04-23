@@ -36,33 +36,6 @@ body { padding : 0; font-family: 'Lato', sans-serif; font-size : 17px; color:var
 }
 
 
-@media screen and (max-device-width: 480px){
-  	body{
-      	-webkit-text-size-adjust: 100%;
-   	}
-   	.title {
-   		display:  block;
-   		width: 100%;
-   	}
-   	#sidebar {
-   		width: 100%;
-   		float:  none;
-   	}
-   	.title #sidebar img {
-   		width:  125;
-   		margin:  auto;
-   		display:  block;
-   		marigin-bottom:  0px;
-   	}
-   	.title #bio {
-   		width:  100%;
-   		text-align: center;
-   	}
-
-   	#bio h1 span {
-   		font-size: 28px;
-   	}
- }
 
 div .aboutme {
 	background: #ffffff;
@@ -95,10 +68,10 @@ td.date {
 
 .generalcontainer { min-height: 90%; margin : 0px auto;  width: 100%; background-color:var(--bkg); border-radius: 10px; clear:both; color:var(--textc)}
 
-#bio { height : 250px; position: relative; float : left; width : 500px; color:var(--bkg) }
+#bio { height : 250px; position: relative; float : left; width : 550px; color:var(--bkg) }
 #bio a { color:var(--urlcolor)}
 #me { border : 0 solid black; margin-bottom : 30px; border-radius : 10px; }
-#sidebar { margin-left:0px; margin-right : 50px; border : 0 solid black; float : left; margin-bottom : 0;}
+#sidebar { margin-left:0px; margin-right : 30px; border : 0 solid black; float : left; margin-bottom : 0;}
 
 
 a { text-decoration : none; }
@@ -170,6 +143,41 @@ table td {
 	color: black;
 	text-decoration: underline
 }
+
+@media (max-width: 900px){
+  	body{
+      	-webkit-text-size-adjust: 100%;
+   	}
+   	.title {
+   		display:  block;
+   		width: 100%;
+   	}
+   	#sidebar {
+   		width: 100%;
+   		float:  none;
+   	}
+   	.title #sidebar img {
+   		width:  125;
+   		margin:  auto;
+   		display:  block;
+   		marigin-bottom:  0px;
+   	}
+   	.title #bio {
+   		width:  100%;
+   		text-align: center;
+   	}
+
+   	#bio h1 span {
+   		font-size: 28px;
+   	}
+	#biocont {
+		width: 100%
+	}
+	.publication .papercont {
+		max-width: 100%
+	}
+}
+
 </style>
 
 <script>
@@ -191,10 +199,10 @@ table td {
     <div class="titlesec">
     <div class="title">
     	<div class="cont">
-	        <div id="sidebar"><img src="media/xavi.jpg" id="me" width="225" itemprop="photo"></div>
+	        <div id="sidebar"><img src="media/xavi.jpg" id="me" width="220" itemprop="photo"></div>
 
 	        <div id="bio">
-	            <div style="position:absolute;top:28px;">
+	            <div id="biocont" style="position:absolute;top:28px;">
 	                <h1 style="padding-bottom: 6px"><span itemprop="name">Xavier Puig</span></h1>
 
 	                <p style="line-height:30px;">
@@ -209,7 +217,8 @@ table td {
 					<a href="documents/CV_Xavier.pdf" class="first">Resume</a> &bull; 
 					<a href="https://scholar.google.com/citations?user=GbaikvkAAAAJ">Google Scholar</a> &bull; 
 					<a href="https://www.linkedin.com/in/xavierpuigf">LinkedIn</a> &bull;
-					<a href="https://github.com/xavierpuigf">GitHub</a>
+					<a href="https://github.com/xavierpuigf">GitHub</a> &bull;
+					<a href="documents/xavier_puig_phd_tesis.pdf">Ph.D. Thesis</a>
 					</p>
 	            </div>
 	        </div>
@@ -541,43 +550,45 @@ table td {
 				<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a> 
 				<a href="http://scenesegmentation.csail.mit.edu">Demo</a> 
 			</span>
-			</p>
         </div>
-</div>
+		</div>
     </div>
 </div>
 
-<div class="containerexp">
-	<div class="container">
-	    <h2>Experience</h2>
 
-	    <table class="experiencetable">
 
-		<tr> 
-			<td class="date" style="width:140px"> 2022.10 - Present: </td> <td> Research Scientist at FAIR <br> Working on the Embodied AI Team </a> </td>
-		</tr>
-		
-		<tr> 
-			<td class="date" style="width:140px"> 2016.9 - 2022.9: </td> <td> Research Assistant, MIT Computer Science and Artificial Intelligence Laboratory <br> Advised by Prof. Antonio Torralba </a> </td>
-
-		</tr>
-
-		<tr> 
-			<td class="date" style="width:140px"> 2019.6 - 2019.8: </td> <td> Research Intern, Google Cambridge working in Contrastive Learning <br> Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna </a> </td>
-		</tr>
-
-		<tr> 
-			<td class="date" style="width:140px"> 2017.6 - 2017.8: </td> <td> Research Intern, Google Seattle, working in Mobile Computer Vision and Adaptive Inference. <br> Advised by Li Zhang, Yukun Zhu, Maxwell Collins </td>
-		</tr>
-	    </table>
-	    <ul>
-
-	        
-	    </ul>
-
+	<div class="containerexp">
+		<div class="container">
+			<h2>Experience</h2>
+	
+			<table class="experiencetable">
+	
+			<tr> 
+				<td class="date" style="width:140px"> 2022.10 - Present: </td> <td> Research Scientist at FAIR <br> Working on the Embodied AI Team </a> </td>
+			</tr>
+			
+			<tr> 
+				<td class="date" style="width:140px"> 2016.9 - 2022.9: </td> <td> Research Assistant, MIT Computer Science and Artificial Intelligence Laboratory <br> Advised by Prof. Antonio Torralba </a> </td>
+	
+			</tr>
+	
+			<tr> 
+				<td class="date" style="width:140px"> 2019.6 - 2019.8: </td> <td> Research Intern, Google Cambridge working in Contrastive Learning <br> Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna </a> </td>
+			</tr>
+	
+			<tr> 
+				<td class="date" style="width:140px"> 2017.6 - 2017.8: </td> <td> Research Intern, Google Seattle, working in Mobile Computer Vision and Adaptive Inference. <br> Advised by Li Zhang, Yukun Zhu, Maxwell Collins </td>
+			</tr>
+			</table>
+			<ul>
+	
+				
+			</ul>
+	
+		</div>
 	</div>
-</div>
-<div>
+	<div>
+		
 <div class="profservice">
 	
 	<div class="container">
