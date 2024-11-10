@@ -76,7 +76,7 @@ td.date {
 
 a { text-decoration : none; }
 a:hover { text-decoration : underline; }
-a, a:visited { color : #3366cc; }
+a, a:visited {  color:var(--urlcolor) } /*color : #3366cc; }*/
 .publication { clear : left; padding-bottom : 20px; }
 .publication-short { padding-left : 120px; }
 .publication p { display: inline-block; margin-top: 20px; margin-bottom: 20px; height : 100px; padding-top : 0px; vertical-align: top}
@@ -87,6 +87,7 @@ a, a:visited { color : #3366cc; }
 .publication .links a { margin-right : 15px; }
 .publication .links strong { margin-right : 20px; }
 .publication img { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%; border: 1.5px solid var(--textc);}
+.publication video { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%; border: 1.5px solid var(--textc);}
 .publication .imgcont { display: inline-block; width: 200px; margin-right: 20px; margin-top: 20px; vertical-align: top}
 .publication .papercont { display: inline-block; margin-right: 20px; margin-top: 20px; vertical-align: top; max-width: 70%}
 
@@ -186,6 +187,14 @@ table td {
 	}
 }
 
+.highlightblob {
+            background-color: #66A182; /*#F93943;/* /* Blob color */
+            color: white;             /* Text color */
+            padding: 0.5px 4px;       /* Padding around the text */
+            border-radius: 4px;      /* Rounded corners to create a blob-like shape */
+            display: inline-block;    /* Ensures the blob wraps closely around the text */
+            
+        }
 </style>
 
 <script>
@@ -274,6 +283,24 @@ table td {
     <table class="newstable">
 		<tr> 
 			<td>  
+				<b> Oct. 2024:</b> We released <a href="https://aihabitat.org/partnr/">PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks</a>.  
+			</td>
+		</tr>
+		
+		<tr> 
+			<td>  
+				<b> Sept. 2024:</b> I gave a talk about Human Foundation Models for Embodied AI at the <a href="https://human-foundation.github.io/workshop-eccv-2024/">Human Foundation Models for 3D Humans</a> workshop at ECCV'2024.  
+			</td>
+		</tr>
+		
+		<tr> 
+			<td>  
+				<b> July 2024:</b> <a href="https://lijiaman.github.io/projects/chois/">CHOIS</a> and <a href="https://soyeonm.github.io/SIF_webpage/">SIF</a> were accepted to ECCV'2024. 
+			</td>
+		</tr>
+		
+		<tr> 
+			<td>  
 				<b> Oct. 2023:</b> Our paper <a href="https://virtualhumans.mpi-inf.mpg.de/origin_2/"> Generating Continual Motion in Diverse 3D Scenes, </a> was accepted to 3DV'2024. 
 			</td>
 		</tr>
@@ -282,18 +309,18 @@ table td {
 				<b> Oct. 2023:</b> We released <a href="https://aihabitat.org/habitat3/">Habitat 3.0</a>. 
 			</td>
 		</tr>
-		<tr> 
+		<tr class="hidden-row"> 
 			<td>  
-				<b> Jan. 2023:</b> Our work <a href="https://ali-design.github.io/GenRep/"> NOPA</a> was accepted to ICRA'2023. 
+				<b> Jan. 2023:</b> Our work <a href="https://github.com/xavierpuigf/online_watch_and_help"> NOPA</a> was accepted to ICRA'2023. 
 			</td>
 		</tr>
-		<tr> 
+		<tr class="hidden-row"> 
 			<td>  
 				<b> Oct. 2022:</b> I joined the Embodied AI team at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, to work in human-centered Embodied Intelligence. 
 			</td>
 		</tr>
 
-		<tr> 
+		<tr class="hidden-row"> 
 			<td>  <b> Sep. 2022:</b> 
 				I defended my Ph.D. Thesis. 
 			</td>
@@ -352,6 +379,115 @@ table td {
     <h2>Publications</h2>
 	<div class="publication">
 		<div class="imgcont">
+			<img src="media/icons/partnr.png" class="publogo">
+		</div>
+		<div class="papercont">
+			<strong> PARTNR: A Benchmark for Planning and Reasoning
+				in Embodied Multi-agent Tasks  </strong> <br> 
+
+
+			<div class="authors">
+				<span>Matthew Chang, 
+				</span><span>Gunjan Chhablani, 
+				</span><span>Alexander Clegg, 
+				</span><span>Mikael Dallaire Cote, 
+				</span><span>Ruta Desai, 
+				</span><span>Michal Hlavac,
+				</span><span>Vladimir Karashchuk, 
+				</span><span>Jacob Krantz, 
+				</span><span>Roozbeh Mottaghi, 
+				</span><span>Priyam Parashar,
+				</span><span>Siddharth Patki, 
+				</span><span>Ishita Prasad,
+				</span><span>Xavier Puig, 
+				</span><span>Akshara Rai, 
+				</span><span>Ram Ramrakhya, 
+				</span><span>Daniel Tran, 
+				</span><span>Joanne Truong, 
+				</span><span>John M. Turner, 
+				</span><span>Eric Undersander
+				</span><span>Tsung-Yen Yang</span>
+			</div>
+			Preprint <br>
+			<span class="links">
+				<a href="https://arxiv.org/pdf/2411.00081">Paper</a> 
+			</span>
+		
+
+		<span class="links">
+			<a href="https://aihabitat.org/partnr/">Webpage</a> 
+		</span>
+			
+			</div>
+	</div>
+
+
+	<div class="publication">
+		<div class="imgcont">
+			<video autoplay loop muted playsinline class="videopublogo">
+				<source src="https://lijiaman.github.io/projects/chois/videos/teaser_video_merged.mp4" type="video/mp4">
+			</video>
+		</div>
+		<div class="papercont">
+			<strong> Controllable human-object interaction synthesis  </strong> <br> 
+
+
+			<div class="authors">
+				<span>  Jiaman Li</span>,
+				<span>  Alex Clegg</span>,
+				<span>  Roozbeh Mottaghi</span>,
+				
+				<span>  Jiajun Wu</span>,
+				<span class="me">  Xavier Puig†</span>,
+				<span>Karen Liu†</span>.
+			</div>
+			In Proc. European Conference of Computer Vision (ECCV), 2024 -  <div class="highlightblob"> Oral </div> <br>
+			<span class="links">
+				<a href="https://arxiv.org/pdf/2312.03913">Paper</a> 
+			</span>
+		
+
+		<span class="links">
+			<a href="https://lijiaman.github.io/projects/chois/">Webpage</a> 
+		</span>
+			
+			</div>
+	</div>
+	<div class="publication">
+		<div class="imgcont">
+			<img src="media/icons/sif_motivation.png" class="publogo">
+		</div>
+		<div class="papercont">
+			<strong> Situated Instruction Following  </strong> <br> 
+
+
+			<div class="authors">
+				<span> So Yeon Min</span>,
+				<span class="me"> Xavier Puig</span>,
+				<span> Devendra Singh Chaplot </span>,
+				<span>Tsung-Yen Yang</span> 
+				<span>Akshara Rai</span>
+				<span>Priyam Parashar</span>
+				<span>Ruslan Salakhutdinov</span>
+				<span>Yonatan Bisk</span>
+				<span>Roozbeh Mottaghi</span>
+				
+			</div>
+			In Proc. European Conference of Computer Vision (ECCV), 2024  <br>
+			<span class="links">
+				<a href="https://arxiv.org/abs/2407.12061">Paper</a> 
+			</span>
+		
+
+		<span class="links">
+			<a href="https://soyeonm.github.io/SIF_webpage/">Webpage</a> 
+		</span>
+			
+			</div>
+	</div>
+
+	<div class="publication">
+		<div class="imgcont">
 			<img src="media/icons/habitat3.gif" class="publogo">
 		</div>
 		<div class="papercont">
@@ -383,7 +519,7 @@ table td {
 				<span>Akshara Rai†</span>,
 				<span>Roozbeh Mottaghi†</span>.
 			</div>
-			Preprint <br>
+			International Conference on Learning Representations (ICLR), 2024  <br>
 			<span class="links">
 				<a href="https://ai.meta.com/static-resource/habitat3">Paper</a> 
 			</span>
@@ -485,7 +621,7 @@ table td {
 					</span>,<span> Yuke Zhu </span>
 				</div>
 
-				In Proc. Neural Information Processing Systems  (NeurIPS), 2022 -  <span style="color:red"> Oral </span> <br>
+				In Proc. Neural Information Processing Systems  (NeurIPS), 2022 -  <div class="highlightblob">  Oral </div> <br>
 				<span class="links">
 					<a href="https://arxiv.org/abs/2202.01771">Paper</a> 
 					<a href="https://github.com/ShuangLI59/Pre-Trained-Language-Models-for-Interactive-Decision-Making">Code</a> 
@@ -533,8 +669,8 @@ table td {
 					<span> Sanja Fidler</span>,
 					<span>Antonio Torralba</span>.
 				</div>
-				Cooperative AI Workshop at NeurIPS, 2020 -  <span style="color:red"> Best paper award </span><br>
-				International Conference on Learning Representations (ICLR), 2021 -  <span style="color:red"> Spotlight </span><br>
+				Cooperative AI Workshop at NeurIPS, 2020 -  <div class="highlightblob">  Best paper award </div><br>
+				International Conference on Learning Representations (ICLR), 2021 -  <div class="highlightblob">  Spotlight </div><br>
 				<span class="links">
 					<a href="https://arxiv.org/abs/2010.09890">Paper</a> 
 					<a href="https://github.com/xavierpuigf/watch_and_help">Code</a> 
@@ -610,7 +746,7 @@ table td {
 			<span>Antonio Torralba</span>,
 			</div>
 
-			In Proc. Computer Vision and Pattern Recognition (CVPR), 2018 -  <span style="color:red"> Oral </span> <br>
+			In Proc. Computer Vision and Pattern Recognition (CVPR), 2018 - <div class="highlightblob">  Oral </div> <br>
 			<span class="links">
 				<a href="https://arxiv.org/pdf/1806.07011.pdf">Paper</a> 
 				<a href="http://virtual-home.org">Webpage</a> 
