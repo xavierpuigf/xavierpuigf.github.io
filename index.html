@@ -1,201 +1,1233 @@
-
-
- <!-- If you are reading this, you are reading my procrastination -->
-<html>
+<!DOCTYPE html>
+<!-- If you are reading this, you are reading my procrastination -->
+<html lang="en">
 <head>
+<meta charset="utf-8">
 <title>Xavier Puig</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Xavier Puig — co-founder at Versor, previously Research Scientist at FAIR and Ph.D. at MIT CSAIL. Building agents that assist and collaborate with humans.">
+<meta name="author" content="Xavier Puig">
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link href='//fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+<meta property="og:title" content="Xavier Puig">
+<meta property="og:description" content="Co-founder at Versor. Previously Research Scientist at FAIR, Ph.D. at MIT CSAIL.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.xavierpuigf.com">
+<meta property="og:image" content="https://www.xavierpuigf.com/media/xavi.jpg">
+
+<link rel="icon" href="media/xavi.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
-
+/* ---------------------------------------------------------------- tokens */
 :root {
-  --link: #1e90ff;
-  --title: #ffffff;
-  --bkg: #F7F7FF;
-  --textc: #323031;
-  --headerc: #22333B; /* #7B9E87;*/
-  --urlcolor: #66A182; /*#F7B05B*/
-}
-.aboutme p { font-size : 17px; margin: 0 0 25px }
-p { font-size : 17px;  }
-li {font-size: 17px; padding: 2px;}
-h1 { padding : 0; margin : 0; font-size : 38px; }
-h2 { font-size : 24px; margin : 0; padding : 0; margin-bottom: 10px }
-h3 { margin : 24px 0; }
-body { padding : 0; font-family: 'Lato', sans-serif; font-size : 17px; color:var(--textc) } 
-.titlesec {background-color:var(--headerc)}
-.title {overflow:  auto; width : 100%; margin : 0px auto; color : #000; padding-top : 30px;  max-width:  800px }
-.title a, .title a:visited {position : relative;}
-.container { width: 95%; max-width : 1000px; border-radius: 20px; padding : 12px; padding-bottom : 30px; padding-top: 30px; clear:both; }
-.container h2 {
-	padding-bottom: 10px;
+	--bkg:        #F7F7FF;
+	--surface:    #ffffff;
+	--surface-2:  #f2f3f8;
+	--textc:      #262b30;
+	--muted:      #6a7480;
+	--headerc:    #22333B;
+	--header-2:   #2c434e;
+	--urlcolor:   #4f8a6d;
+	--accent:     #66A182;
+	--accent-dim: rgba(102, 161, 130, 0.14);
+	--border:     rgba(34, 51, 59, 0.11);
+	--shadow:     0 1px 2px rgba(24, 39, 46, .05), 0 8px 24px -12px rgba(24, 39, 46, .18);
+	--shadow-lg:  0 2px 4px rgba(24, 39, 46, .05), 0 18px 40px -16px rgba(24, 39, 46, .30);
+	--radius:     14px;
+	--maxw:       1000px;
 }
 
-
-
-div .aboutme {
-	background: #ffffff;
+html[data-theme="dark"] {
+	--bkg:        #12171a;
+	--surface:    #1a2126;
+	--surface-2:  #212a30;
+	--textc:      #e4eae7;
+	--muted:      #9aa8a3;
+	--headerc:    #0e1417;
+	--header-2:   #1a262c;
+	--urlcolor:   #86c5a5;
+	--accent:     #7fbc9c;
+	--accent-dim: rgba(127, 188, 156, 0.16);
+	--border:     rgba(255, 255, 255, 0.11);
+	--shadow:     0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px -12px rgba(0, 0, 0, .6);
+	--shadow-lg:  0 2px 4px rgba(0, 0, 0, .3), 0 18px 40px -16px rgba(0, 0, 0, .7);
 }
 
-/*div .containerews {
-	background: #ffffff;
-}
-*/
-div .containerexp {
-	background: #ffffff;
-}
+* { box-sizing: border-box; }
 
-div .containerexp {
-	background: #ffffff;
-}
+html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
-div .containerpub {
-	background: #ffffff;
-}
-
-
-div .profservice {
-	background: #ffffff;
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+	font-size: 16.5px;
+	line-height: 1.65;
+	color: var(--textc);
+	background: var(--bkg);
+	-webkit-font-smoothing: antialiased;
+	transition: background-color .25s ease, color .25s ease;
 }
 
-td.date {
-	font-weight: bold
+a { color: var(--urlcolor); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+h1, h2, h3 { line-height: 1.25; letter-spacing: -0.015em; margin: 0; }
+h1 { font-size: 40px; font-weight: 700; }
+h2 { font-size: 15px; font-weight: 600; }
+h3 { font-size: 17.5px; font-weight: 600; }
+
+img, video { max-width: 100%; }
+
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+/* ------------------------------------------------------------------- nav */
+.nav {
+	position: sticky;
+	top: 0;
+	z-index: 50;
+	background: color-mix(in srgb, var(--bkg) 82%, transparent);
+	backdrop-filter: saturate(180%) blur(14px);
+	-webkit-backdrop-filter: saturate(180%) blur(14px);
+	border-bottom: 1px solid transparent;
+	transition: border-color .25s ease, background-color .25s ease;
 }
-
-.generalcontainer { min-height: 90%; margin : 0px auto;  width: 100%; background-color:var(--bkg); border-radius: 10px; clear:both; color:var(--textc)}
-
-#bio { height : 250px; position: relative; float : left; width : 550px; color:var(--bkg) }
-#bio a { color:var(--urlcolor)}
-#me { border : 0 solid black; margin-bottom : 30px; border-radius : 10px; }
-#sidebar { margin-left:0px; margin-right : 30px; border : 0 solid black; float : left; margin-bottom : 0;}
-
-
-a { text-decoration : none; }
-a:hover { text-decoration : underline; }
-a, a:visited {  color:var(--urlcolor) } /*color : #3366cc; }*/
-.publication { clear : left; padding-bottom : 20px; }
-.publication-short { padding-left : 120px; }
-.publication p { display: inline-block; margin-top: 20px; margin-bottom: 20px; height : 100px; padding-top : 0px; vertical-align: top}
-.publication-short p { height : 0; }
-.publication strong a { color : #000; text-decoration  :none; }
-.publication strong a:hover { text-decoration : underline; }
-.publication .links { position : relative; top : 15px }
-.publication .links a { margin-right : 15px; }
-.publication .links strong { margin-right : 20px; }
-.publication img { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%; border: 1.5px solid var(--textc);}
-.publication video { border-radius : 5px; max-height: 80%; width: auto; max-width: 100%; border: 1.5px solid var(--textc);}
-.publication .imgcont { display: inline-block; width: 200px; margin-right: 20px; margin-top: 20px; vertical-align: top}
-.publication .papercont { display: inline-block; margin-right: 20px; margin-top: 20px; vertical-align: top; max-width: 70%}
-
-
-
-.press { display : inline-block; padding : 5px; height : 40px;}
-.press a img { border : 3px solid #fff; border-radius : 10px; padding : 4px; }
-.press a img:hover { border-color : #3366cc; }
-.talk { display : inline-block; text-align : center; padding : 0 15px;}
-.talk img { margin-bottom : 5px; }
-.talk a img { border : 3px solid #fff; border-radius : 10px; padding : 5px; }
-.talk a img:hover { border-color : #3366cc; }
-.codelogo { margin-right : 50px; float : left; border : 0;}
-.code { padding-bottom : 10px; vertical-align :middle; height : 150px !important; width : 550px;} 
-.code .download a { display : block; margin : 0 30px 0 0; float : left;}
-.code strong { display : block; padding-bottom : 10px;}
-.code strong a { color : #000; }
-.code img { border-radius : 5px; }
-.external a { margin : 0 10px; }
-.external a.first { margin : 0 10px 0 0; }
-.news { border-style: solid; border-width: 1px; border-color: gray; padding: 10px;}
-.news img { height: 40px; width: auto; padding: 5px; padding-left: 10px}
-
-.new { background-color : #cc0000; color:white; border-radius : 5px; padding : 2px; font-size : 14px; margin : 0 10px;}
-
-.newstable {
-	/* border-style: solid; */
-	border-spacing: 0px 5px;
-	border-collapse: separate;
-	border-width: 1px;
+.nav.scrolled { border-bottom-color: var(--border); }
+.nav-inner {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	height: 58px;
+	max-width: var(--maxw);
+	margin: 0 auto;
+	padding: 0 24px;
 }
+.nav-brand {
+	font-weight: 700;
+	font-size: 15.5px;
+	color: var(--textc);
+	letter-spacing: -0.01em;
+	opacity: 0;
+	transform: translateY(4px);
+	transition: opacity .25s ease, transform .25s ease;
+	pointer-events: none;
+	white-space: nowrap;
+}
+.nav.scrolled .nav-brand { opacity: 1; transform: none; pointer-events: auto; }
+.nav-brand:hover { text-decoration: none; }
 
-#news-link {
+.nav-links {
+	display: flex;
+	align-items: center;
+	gap: 2px;
+	margin-left: auto;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+	color: var(--muted);
+	font-size: 14.5px;
+	font-weight: 500;
+	padding: 6px 11px;
+	border-radius: 8px;
+	white-space: nowrap;
+	transition: color .18s ease, background-color .18s ease;
+}
+.nav-links a:hover { color: var(--textc); background: var(--surface-2); text-decoration: none; }
+.nav-links a.active { color: var(--accent); background: var(--accent-dim); }
+
+.theme-toggle {
+	flex: none;
+	display: grid;
+	place-items: center;
+	width: 34px;
+	height: 34px;
+	border: 1px solid var(--border);
+	border-radius: 9px;
+	background: var(--surface);
+	color: var(--muted);
 	cursor: pointer;
-	color: #3366cc;
-	text-decoration: underline;
+	padding: 0;
+	transition: color .18s ease, border-color .18s ease, transform .18s ease;
 }
-.hidden-row {
-      display: none;
-    }
-.experiencetable {
-	#border-style: solid;
-	border-spacing: 0px 5px;
-	border-collapse: separate;
-	border-width: 1px;
+.theme-toggle:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+.theme-toggle svg { width: 16px; height: 16px; }
+html[data-theme="dark"] .icon-sun { display: none; }
+html:not([data-theme="dark"]) .icon-moon { display: none; }
+
+/* ------------------------------------------------------------------ hero */
+.hero {
+	background: linear-gradient(160deg, var(--headerc) 0%, var(--header-2) 100%);
+	color: #fff;
+	padding: 56px 0 64px;
+	position: relative;
+	overflow: hidden;
+}
+.hero::after {
+	content: "";
+	position: absolute;
+	width: 520px; height: 520px;
+	right: -160px; top: -260px;
+	background: radial-gradient(circle, rgba(102,161,130,.30), transparent 68%);
+	pointer-events: none;
+}
+.hero-inner {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+	position: relative;
+	z-index: 1;
+}
+.hero img {
+	width: 190px; height: 190px;
+	flex: none;
+	object-fit: cover;
+	border-radius: 20px;
+	border: 3px solid rgba(255,255,255,.16);
+	box-shadow: 0 18px 40px -18px rgba(0,0,0,.7);
+}
+.hero h1 { color: #fff; margin-bottom: 8px; }
+.hero .role { font-size: 18px; color: rgba(255,255,255,.86); margin: 0 0 4px; }
+.hero .role a { color: #fff; border-bottom: 1px solid rgba(255,255,255,.45); }
+.hero .role a:hover { text-decoration: none; border-bottom-color: #fff; }
+.hero .meta { font-size: 14.5px; color: rgba(255,255,255,.62); margin: 0 0 20px; }
+.hero .meta a { color: rgba(255,255,255,.78); }
+.hero .meta a:hover { color: #fff; }
+
+.linkrow { display: flex; flex-wrap: wrap; gap: 9px; }
+.linkrow a {
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	font-size: 14px;
+	font-weight: 500;
+	color: rgba(255,255,255,.92);
+	background: rgba(255,255,255,.09);
+	border: 1px solid rgba(255,255,255,.16);
+	padding: 7px 13px;
+	border-radius: 999px;
+	transition: background-color .18s ease, transform .18s ease, border-color .18s ease;
+}
+.linkrow a:hover {
+	text-decoration: none;
+	background: rgba(255,255,255,.18);
+	border-color: rgba(255,255,255,.34);
+	transform: translateY(-1px);
+}
+.linkrow svg { width: 15px; height: 15px; flex: none; }
+
+/* --------------------------------------------------------------- section */
+section { padding: 52px 0 8px; }
+section:last-of-type { padding-bottom: 40px; }
+
+.section-head {
+	display: flex;
+	align-items: baseline;
+	gap: 12px;
+	margin-bottom: 22px;
+}
+.section-head h2 {
+	text-transform: uppercase;
+	letter-spacing: .12em;
+	font-size: 12.5px;
+	color: var(--accent);
+}
+.section-head .rule { flex: 1; height: 1px; background: var(--border); }
+
+.card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 26px 28px;
 }
 
-.experiencetable tr {
-	height:  50px;
+.lead p { margin: 0 0 18px; }
+.lead p:last-child { margin-bottom: 0; }
+.lead .callout {
+	margin-top: 22px;
+	padding: 14px 18px;
+	background: var(--accent-dim);
+	border-left: 3px solid var(--accent);
+	border-radius: 8px;
+	font-weight: 500;
 }
 
-table td {
-	vertical-align: text-top;
+/* ------------------------------------------------------------------ news */
+.news-list { display: flex; flex-direction: column; }
+.news-item {
+	display: grid;
+	grid-template-columns: 108px 1fr;
+	gap: 18px;
+	padding: 13px 0;
+	border-bottom: 1px solid var(--border);
+}
+.news-item:last-child { border-bottom: 0; }
+.news-item .when {
+	font-size: 13.5px;
+	font-weight: 600;
+	color: var(--muted);
+	letter-spacing: .01em;
+	padding-top: 1px;
+	white-space: nowrap;
+}
+.news-item.is-hidden { display: none; }
+
+.ghost-btn {
+	margin-top: 18px;
+	display: inline-flex;
+	align-items: center;
+	gap: 7px;
+	font: inherit;
+	font-size: 14px;
+	font-weight: 500;
+	color: var(--urlcolor);
+	background: none;
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 6px 15px;
+	cursor: pointer;
+	transition: border-color .18s ease, background-color .18s ease;
+}
+.ghost-btn:hover { border-color: var(--accent); background: var(--accent-dim); }
+.ghost-btn svg { width: 13px; height: 13px; transition: transform .22s ease; }
+.ghost-btn[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+/* ---------------------------------------------------------------- filter */
+.filters {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+	margin-bottom: 22px;
+}
+.filters button {
+	font: inherit;
+	font-size: 13.5px;
+	font-weight: 500;
+	color: var(--muted);
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 999px;
+	padding: 6px 14px;
+	cursor: pointer;
+	transition: all .18s ease;
+}
+.filters button:hover { color: var(--textc); border-color: var(--accent); }
+.filters button[aria-pressed="true"] {
+	color: #fff;
+	background: var(--accent);
+	border-color: var(--accent);
+}
+.filters button .count { opacity: .6; font-size: 12px; margin-left: 3px; }
+.filters button[aria-pressed="true"] .count { opacity: .8; }
+
+/* ---------------------------------------------------------- publications */
+.pubs { display: flex; flex-direction: column; gap: 16px; }
+
+.publication {
+	display: grid;
+	grid-template-columns: 208px 1fr;
+	gap: 24px;
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow);
+	padding: 20px 22px;
+	transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.publication:hover {
+	transform: translateY(-2px);
+	box-shadow: var(--shadow-lg);
+	border-color: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+.publication.filtered-out { display: none; }
+
+.thumb {
+	background: var(--surface-2);
+	border: 1px solid var(--border);
+	border-radius: 10px;
+	overflow: hidden;
+	align-self: start;
+	line-height: 0;
+}
+.thumb img, .thumb video {
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
+.pub-title {
+	font-size: 17px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	margin: 0 0 6px;
+	color: var(--textc);
+}
 .authors {
-	padding-top: 5px;
-	padding-bottom: 3px;
-	color: rgb(120,120,120)
+	font-size: 14px;
+	color: var(--muted);
+	margin-bottom: 7px;
 }
-.authors .me {
-	color: black;
-	text-decoration: underline
+.authors .me { color: var(--textc); font-weight: 600; }
+.venue {
+	font-size: 14px;
+	color: var(--textc);
+	margin-bottom: 12px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 7px;
+}
+.venue .line { display: block; width: 100%; }
+
+.badge {
+	display: inline-block;
+	background: var(--accent);
+	color: #fff;
+	font-size: 11.5px;
+	font-weight: 600;
+	letter-spacing: .02em;
+	padding: 1px 8px;
+	border-radius: 999px;
+	vertical-align: 1px;
+}
+.badge.alt { background: var(--headerc); }
+html[data-theme="dark"] .badge { color: #10171a; }
+html[data-theme="dark"] .badge.alt { background: var(--surface-2); color: var(--textc); }
+
+.links { display: flex; flex-wrap: wrap; gap: 7px; }
+.links a, .links button {
+	font: inherit;
+	font-size: 13px;
+	font-weight: 500;
+	color: var(--urlcolor);
+	background: var(--surface-2);
+	border: 1px solid transparent;
+	border-radius: 7px;
+	padding: 4px 11px;
+	cursor: pointer;
+	transition: all .16s ease;
+}
+.links a:hover, .links button:hover {
+	text-decoration: none;
+	background: var(--accent-dim);
+	border-color: var(--accent);
 }
 
-@media (max-width: 900px){
-  	body{
-      	-webkit-text-size-adjust: 100%;
-   	}
-   	.title {
-   		display:  block;
-   		width: 100%;
-   	}
-   	#sidebar {
-   		width: 100%;
-   		float:  none;
-   	}
-   	.title #sidebar img {
-   		width:  125;
-   		margin:  auto;
-   		display:  block;
-   		margin-bottom:  0px;
-   	}
-   	.title #bio {
-   		width:  100%;
-   		text-align: center;
-   	}
+.press {
+	display: none;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px;
+	margin-top: 14px;
+	padding: 12px 14px;
+	background: var(--surface-2);
+	border-radius: 10px;
+}
+.press.open { display: flex; }
+.press img {
+	height: 30px;
+	width: auto;
+	opacity: .8;
+	transition: opacity .18s ease, transform .18s ease;
+}
+html[data-theme="dark"] .press img { background: #fff; border-radius: 4px; padding: 2px; }
+.press a:hover img { opacity: 1; transform: translateY(-2px); }
 
-   	#bio h1 span {
-   		font-size: 28px;
-   	}
-	#biocont {
-		width: 100%
-	}
-	.publication .papercont {
-		max-width: 100%
-	}
+/* ------------------------------------------------------------ experience */
+.timeline { position: relative; padding-left: 22px; }
+.timeline::before {
+	content: "";
+	position: absolute;
+	left: 4px; top: 8px; bottom: 8px;
+	width: 2px;
+	background: var(--border);
+}
+.tl-item { position: relative; padding: 0 0 24px; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before {
+	content: "";
+	position: absolute;
+	left: -22px; top: 8px;
+	width: 10px; height: 10px;
+	border-radius: 50%;
+	background: var(--surface);
+	border: 2px solid var(--accent);
+}
+.tl-item.current::before { background: var(--accent); box-shadow: 0 0 0 4px var(--accent-dim); }
+.tl-item .when {
+	font-size: 12.5px;
+	font-weight: 600;
+	letter-spacing: .04em;
+	text-transform: uppercase;
+	color: var(--muted);
+}
+.tl-item .what { font-size: 16.5px; font-weight: 600; margin: 1px 0 2px; }
+.tl-item .detail { font-size: 14.5px; color: var(--muted); }
+
+/* --------------------------------------------------------------- service */
+.service { display: flex; flex-direction: column; gap: 20px; }
+.service .row h3 { margin-bottom: 4px; }
+.service .row p { margin: 0; font-size: 15px; color: var(--muted); }
+.service .row p a { font-weight: 500; }
+
+/* ---------------------------------------------------------------- footer */
+footer {
+	border-top: 1px solid var(--border);
+	margin-top: 40px;
+	padding: 26px 0 34px;
+	font-size: 13.5px;
+	color: var(--muted);
+}
+.footer-inner { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space-between; }
+
+/* -------------------------------------------------------------- reveal fx */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.in { opacity: 1; transform: none; }
+
+/* ------------------------------------------------------------ responsive */
+@media (max-width: 860px) {
+	h1 { font-size: 32px; }
+	.hero { padding: 40px 0 46px; }
+	.hero-inner { flex-direction: column; align-items: center; text-align: center; gap: 24px; }
+	.hero img { width: 150px; height: 150px; }
+	.linkrow { justify-content: center; }
+	.publication { grid-template-columns: 1fr; gap: 16px; }
+	.thumb { max-width: 320px; }
+	.news-item { grid-template-columns: 1fr; gap: 2px; }
+	.card { padding: 22px 20px; }
+	.wrap, .nav-inner { padding: 0 18px; }
+	.nav-links a { padding: 6px 9px; font-size: 14px; }
 }
 
-.highlightblob {
-            background-color: #66A182; /*#F93943;/* /* Blob color */
-            color: white;             /* Text color */
-            padding: 0.5px 4px;       /* Padding around the text */
-            border-radius: 4px;      /* Rounded corners to create a blob-like shape */
-            display: inline-block;    /* Ensures the blob wraps closely around the text */
-            
-        }
+@media (max-width: 520px) {
+	.nav-brand { display: none; }
+	.nav-links { margin-left: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html { scroll-behavior: auto; }
+	.reveal { opacity: 1; transform: none; transition: none; }
+	* { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
 </style>
+</head>
+
+<body>
+
+<!-- ================================================================= nav -->
+<nav class="nav" id="nav">
+	<div class="nav-inner">
+		<a href="#top" class="nav-brand">Xavier Puig</a>
+		<div class="nav-links">
+			<a href="#about">About</a>
+			<a href="#news">News</a>
+			<a href="#publications">Publications</a>
+			<a href="#experience">Experience</a>
+			<a href="#service">Service</a>
+		</div>
+		<button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode" title="Toggle dark mode">
+			<svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+			<svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+		</button>
+	</div>
+</nav>
+
+<!-- ================================================================ hero -->
+<header class="hero" id="top">
+	<div class="wrap hero-inner">
+		<img src="media/xavi.jpg" alt="Xavier Puig" width="190" height="190" itemprop="photo">
+		<div>
+			<h1 itemprop="name">Xavier Puig</h1>
+			<p class="role">Co-founder at a stealth robotics startup</p>
+			<p class="meta">
+				<a href="mailto:xavierpuigf@gmail.com">xavierpuigf@gmail.com</a>
+			</p>
+			<div class="linkrow">
+				<a href="documents/CV_Xavier.pdf">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+					Resume
+				</a>
+				<a href="https://scholar.google.com/citations?user=GbaikvkAAAAJ">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11.5V17c0 1.5 2.7 3 6 3s6-1.5 6-3v-5.5"/></svg>
+					Google Scholar
+				</a>
+				<a href="https://www.linkedin.com/in/xavierpuigf">
+					<svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.29-.02-2.95-1.8-2.95-1.8 0-2.07 1.4-2.07 2.85V21H9z"/></svg>
+					LinkedIn
+				</a>
+				<a href="https://github.com/xavierpuigf">
+					<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.26.8-.57v-2c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.1-.75.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.84 2.8 1.3 3.49 1 .1-.78.42-1.31.76-1.61-2.67-.3-5.47-1.34-5.47-5.96 0-1.32.47-2.39 1.24-3.23-.13-.3-.54-1.53.11-3.18 0 0 1.01-.32 3.3 1.23a11.4 11.4 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.65.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.23 0 4.63-2.8 5.65-5.48 5.95.43.37.81 1.1.81 2.22v3.29c0 .31.22.68.82.57A12 12 0 0 0 12 .5z"/></svg>
+					GitHub
+				</a>
+				<a href="documents/xavier_puig_phd_tesis.pdf">
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+					Ph.D. Thesis
+				</a>
+			</div>
+		</div>
+	</div>
+</header>
+
+<main class="wrap">
+
+<!-- =============================================================== about -->
+<section id="about">
+	<div class="section-head"><h2>About</h2><span class="rule"></span></div>
+	<div class="card lead reveal">
+		<p>
+			I am a co-founder at Versor, a robotics company using simulation to accelerate robot deployments.
+			Before this, I was a Research Scientist at <a href="https://ai.facebook.com/research/#fundamental-and-applied">FAIR</a>,
+			working on Embodied AI. I completed my Ph.D. at the
+			<a href="http://www.csail.mit.edu/">Computer Science and Artificial Intelligence Laboratory (CSAIL)</a> of
+			<a href="http://web.mit.edu">MIT</a>, advised by Professor <a href="http://web.mit.edu/torralba/www/">Antonio Torralba</a>.
+			Before that, I obtained a double degree in Computer Science and Telecommunications at the
+			<a href="http://www.cfis.upc.edu/">CFIS</a> program of <a href="http://www.upc.edu/">UPC</a>.
+		</p>
+		<p>
+			I am interested in building agents that can assist and collaborate with humans. My research focuses on
+			developing agents that can understand and anticipate human goals, and coordinate with them in performing
+			complex tasks. I also study how to represent humans in simulation environments, including generating
+			realistic motions and plausible high-level behaviors.
+		</p>
+		<p class="callout">
+			If you are interested in these areas, and would like to collaborate, or are interested in joining our team, reach out!
+		</p>
+	</div>
+</section>
+
+<!-- ================================================================ news -->
+<section id="news">
+	<div class="section-head"><h2>News</h2><span class="rule"></span></div>
+	<div class="card reveal">
+		<div class="news-list" id="news-list">
+
+			<div class="news-item">
+				<span class="when">Jan. 2026</span>
+				<span>I started <b>Versor</b>, a robotics company using simulation to accelerate robot deployments.</span>
+			</div>
+			<div class="news-item">
+				<span class="when">Oct. 2025</span>
+				<span>I left Meta, after three years working on Embodied AI at <a href="https://ai.facebook.com/research/#fundamental-and-applied">FAIR</a>.</span>
+			</div>
+			<div class="news-item">
+				<span class="when">Oct. 2024</span>
+				<span>We released <a href="https://aihabitat.org/partnr/">PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks</a>.</span>
+			</div>
+			<div class="news-item">
+				<span class="when">Sept. 2024</span>
+				<span>I gave a talk about Human Foundation Models for Embodied AI at the <a href="https://human-foundation.github.io/workshop-eccv-2024/">Human Foundation Models for 3D Humans</a> workshop at ECCV&nbsp;2024.</span>
+			</div>
+			<div class="news-item">
+				<span class="when">July 2024</span>
+				<span><a href="https://lijiaman.github.io/projects/chois/">CHOIS</a> and <a href="https://soyeonm.github.io/SIF_webpage/">SIF</a> were accepted to ECCV&nbsp;2024.</span>
+			</div>
+			<div class="news-item">
+				<span class="when">Oct. 2023</span>
+				<span>Our paper <a href="https://virtualhumans.mpi-inf.mpg.de/origin_2/">Generating Continual Motion in Diverse 3D Scenes</a> was accepted to 3DV&nbsp;2024.</span>
+			</div>
+			<div class="news-item">
+				<span class="when">Oct. 2023</span>
+				<span>We released <a href="https://aihabitat.org/habitat3/">Habitat 3.0</a>.</span>
+			</div>
+
+			<div class="news-item is-hidden">
+				<span class="when">Jan. 2023</span>
+				<span>Our work <a href="https://github.com/xavierpuigf/online_watch_and_help">NOPA</a> was accepted to ICRA&nbsp;2023.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Oct. 2022</span>
+				<span>I joined the Embodied AI team at <a href="https://ai.facebook.com/research/#fundamental-and-applied">FAIR</a>, to work in human-centered Embodied Intelligence.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Sep. 2022</span>
+				<span>I defended my Ph.D. Thesis.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Jan. 2022</span>
+				<span><a href="https://ali-design.github.io/GenRep/">GenRep</a> was accepted to ICLR&nbsp;2022.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Apr. 2021</span>
+				<span>We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social AI Virtual Gathering</a>, at ICLR&nbsp;2021.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Feb. 2021</span>
+				<span>We are organizing the <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence in Humans and Robots Workshop</a>, to be held at <a href="http://www.icra2021.org/">ICRA&nbsp;2021</a>.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Jan. 2021</span>
+				<span><a href="https://openreview.net/forum?id=w_7JMpGZRh0">Watch-And-Help</a> was accepted to <a href="https://iclr.cc/Conferences/2021/">ICLR&nbsp;2021</a> as a Spotlight presentation.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Nov. 2020</span>
+				<span><a href="https://arxiv.org/abs/2010.09890">Watch-And-Help</a> was accepted to the <a href="https://www.cooperativeai.com/">Cooperative AI Workshop at NeurIPS 2020</a> as a Best paper award.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Oct. 2020</span>
+				<span>We released the <a href="https://github.com/xavierpuigf/watch_and_help">code</a> for our <b>Watch-And-Help</b> paper.</span>
+			</div>
+			<div class="news-item is-hidden">
+				<span class="when">Sep. 2020</span>
+				<span>We released the <a href="https://github.com/xavierpuigf/virtualhome">new version of VirtualHome</a>, as well as the <a href="https://github.com/xavierpuigf/virtualhome_unity">Unity Source Code</a>.</span>
+			</div>
+		</div>
+
+		<button class="ghost-btn" id="news-toggle" type="button" aria-expanded="false" aria-controls="news-list">
+			<span>Show older news</span>
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+		</button>
+	</div>
+</section>
+
+<!-- ======================================================== publications -->
+<section id="publications">
+	<div class="section-head"><h2>Publications</h2><span class="rule"></span></div>
+
+	<div class="filters" id="filters">
+		<button type="button" data-filter="all" aria-pressed="true">All</button>
+		<button type="button" data-filter="embodied" aria-pressed="false">Embodied AI &amp; Agents</button>
+		<button type="button" data-filter="humans" aria-pressed="false">Humans &amp; Motion</button>
+		<button type="button" data-filter="scenes" aria-pressed="false">Scene Understanding</button>
+		<button type="button" data-filter="learning" aria-pressed="false">Vision &amp; Learning</button>
+	</div>
+
+	<div class="pubs" id="pubs">
+
+		<!-- Embodied learnable memory -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/epm.jpg" alt="Embodied Perception Memory teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Planning with an Embodied Learnable Memory</h3>
+				<div class="authors">
+					Priyam Parashar, Jacob Krantz, Matthew Chang, Kavit Shah,
+					<span class="me">Xavier Puig</span>, Roozbeh Mottaghi
+				</div>
+				<div class="venue">International Conference on Learning Representations (ICLR), 2026</div>
+				<div class="links">
+					<a href="https://proceedings.iclr.cc/paper_files/paper/2026/file/e64e016e7605d0c7484756f9814646c2-Paper-Conference.pdf">Paper</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- COOPERA -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/coopera.jpg" alt="COOPERA framework" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">COOPERA: Continual Open-Ended Human-Robot Assistance</h3>
+				<div class="authors">
+					Chenyang Ma, Kai Lu, Ruta Desai, <span class="me">Xavier Puig</span>,
+					Andrew Markham, Niki Trigoni
+				</div>
+				<div class="venue">
+					<span>Neural Information Processing Systems (NeurIPS), 2025</span>
+					<span class="badge">Spotlight</span>
+				</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2510.23495">Paper</a>
+					<a href="https://github.com/dannymcy/coopera_code">Code</a>
+					<a href="https://dannymcy.github.io/coopera/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Ask-to-Act -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/asktoact.png" alt="Ask-to-Act teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Grounding Multimodal LLMs to Embodied Agents that Ask for Help with Reinforcement Learning</h3>
+				<div class="authors">
+					Ram Ramrakhya, Matthew Chang, <span class="me">Xavier Puig</span>, Ruta Desai,
+					Zsolt Kira, Roozbeh Mottaghi
+				</div>
+				<div class="venue">Preprint, 2025</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2504.00907">Paper</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- ADAPT -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/adapt.png" alt="ADAPT teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">ADAPT: Actively Discovering and Adapting to Preferences for any Task</h3>
+				<div class="authors">
+					Maithili Patel, <span class="me">Xavier Puig</span>, Ruta Desai, Roozbeh Mottaghi,
+					Sonia Chernova, Joanne Truong, Akshara Rai
+				</div>
+				<div class="venue">Preprint, 2025</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2504.04040">Paper</a>
+					<a href="https://github.com/Maithili/Adapt">Code</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- RobotMover -->
+		<article class="publication reveal" data-tags="embodied humans">
+			<div class="thumb"><img src="media/icons/robotmover.png" alt="RobotMover teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">RobotMover: Learning to Move Large Objects from Human Demonstrations</h3>
+				<div class="authors">
+					Tianyu Li, Joanne Truong, Jimmy Yang, Alexander Clegg, Akshara Rai, Sehoon Ha,
+					<span class="me">Xavier Puig</span>
+				</div>
+				<div class="venue">Preprint, 2025</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2502.05271">Paper</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- PARTNR -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/partnr.png" alt="PARTNR teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks</h3>
+				<div class="authors">
+					Matthew Chang, Gunjan Chhablani, Alexander Clegg, Mikael Dallaire Cote, Ruta Desai,
+					Michal Hlavac, Vladimir Karashchuk, Jacob Krantz, Roozbeh Mottaghi, Priyam Parashar,
+					Siddharth Patki, Ishita Prasad, <span class="me">Xavier Puig</span>, Akshara Rai, Ram Ramrakhya,
+					Daniel Tran, Joanne Truong, John M. Turner, Eric Undersander, Tsung-Yen Yang
+				</div>
+				<div class="venue">International Conference on Learning Representations (ICLR), 2025</div>
+				<div class="links">
+					<a href="https://arxiv.org/pdf/2411.00081">Paper</a>
+					<a href="https://aihabitat.org/partnr/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- CHOIS -->
+		<article class="publication reveal" data-tags="humans embodied">
+			<div class="thumb">
+				<video autoplay loop muted playsinline>
+					<source src="https://lijiaman.github.io/projects/chois/videos/teaser_video_merged.mp4" type="video/mp4">
+				</video>
+			</div>
+			<div>
+				<h3 class="pub-title">Controllable Human-Object Interaction Synthesis</h3>
+				<div class="authors">
+					Jiaman Li, Alex Clegg, Roozbeh Mottaghi, Jiajun Wu,
+					<span class="me">Xavier Puig†</span>, Karen Liu†
+				</div>
+				<div class="venue">
+					<span>European Conference on Computer Vision (ECCV), 2024</span>
+					<span class="badge">Oral</span>
+				</div>
+				<div class="links">
+					<a href="https://arxiv.org/pdf/2312.03913">Paper</a>
+					<a href="https://lijiaman.github.io/projects/chois/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- SIF -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/sif_motivation.png" alt="Situated Instruction Following teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Situated Instruction Following</h3>
+				<div class="authors">
+					So Yeon Min, <span class="me">Xavier Puig</span>, Devendra Singh Chaplot, Tsung-Yen Yang,
+					Akshara Rai, Priyam Parashar, Ruslan Salakhutdinov, Yonatan Bisk, Roozbeh Mottaghi
+				</div>
+				<div class="venue">European Conference on Computer Vision (ECCV), 2024</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2407.12061">Paper</a>
+					<a href="https://soyeonm.github.io/SIF_webpage/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Habitat 3.0 -->
+		<article class="publication reveal" data-tags="embodied humans">
+			<div class="thumb"><img src="media/icons/habitat3.gif" alt="Habitat 3.0 teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots</h3>
+				<div class="authors">
+					<span class="me">Xavier Puig∗</span>, Eric Undersander∗, Andrew Szot∗, Mikael Dallaire Cote∗,
+					Tsung-Yen Yang∗, Ruslan Partsey∗, Ruta Desai∗, Alexander William Clegg∗, Michal Hlavac,
+					So Yeon Min, Vladimír Vondruš, Theophile Gervet, Vincent-Pierre Berges, John M. Turner,
+					Oleksandr Maksymets, Zsolt Kira, Mrinal Kalakrishnan, Jitendra Malik, Devendra Singh Chaplot,
+					Unnat Jain, Dhruv Batra, Akshara Rai†, Roozbeh Mottaghi†
+				</div>
+				<div class="venue">International Conference on Learning Representations (ICLR), 2024</div>
+				<div class="links">
+					<a href="https://ai.meta.com/static-resource/habitat3">Paper</a>
+					<a href="https://aihabitat.org/habitat3/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Continual motion -->
+		<article class="publication reveal" data-tags="humans">
+			<div class="thumb"><img src="media/icons/vide_motionsin.gif" alt="Continual motion teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Generating Continual Motion in Diverse 3D Scenes</h3>
+				<div class="authors">
+					Aymen Mir, <span class="me">Xavier Puig</span>, Angjoo Kanazawa, Gerard Pons-Moll
+				</div>
+				<div class="venue">International Conference on 3D Vision (3DV), 2024</div>
+				<div class="links">
+					<a href="https://arxiv.org/pdf/2304.02061.pdf">Paper</a>
+					<a href="https://virtualhumans.mpi-inf.mpg.de/origin_2/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- NOPA -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/teaser_NOPA.png" alt="NOPA teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">NOPA: Neurally-guided Online Probabilistic Assistance for Building Socially Intelligent Home Assistants</h3>
+				<div class="authors">
+					<span class="me">Xavier Puig*</span>, Tianmin Shu*, Josh Tenenbaum, Antonio Torralba
+				</div>
+				<div class="venue">IEEE International Conference on Robotics and Automation (ICRA), 2023</div>
+				<div class="links">
+					<a href="documents/publications/NOPA.pdf">Paper</a>
+					<a href="https://github.com/xavierpuigf/online_watch_and_help">Code</a>
+					<a href="https://www.tshu.io/online_watch_and_help/">Webpage</a>
+					<a href="https://youtu.be/Oawo9pynPL0">Video</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- LM agents -->
+		<article class="publication reveal" data-tags="embodied learning">
+			<div class="thumb"><img src="media/icons/teaser_lmagent.png" alt="Pre-trained language models teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Pre-Trained Language Models for Interactive Decision-Making</h3>
+				<div class="authors">
+					Shuang Li, <span class="me">Xavier Puig</span>, Chris Paxton, Yilun Du, Clinton Wang, Linxi Fan,
+					Tao Chen, De-An Huang, Ekin Akyurek, Anima Anandkumar, Jacob Andreas, Igor Mordatch,
+					Antonio Torralba, Yuke Zhu
+				</div>
+				<div class="venue">
+					<span>Neural Information Processing Systems (NeurIPS), 2022</span>
+					<span class="badge">Oral</span>
+				</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2202.01771">Paper</a>
+					<a href="https://github.com/ShuangLI59/Pre-Trained-Language-Models-for-Interactive-Decision-Making">Code</a>
+					<a href="https://shuangli-project.github.io/Pre-Trained-Language-Models-for-Interactive-Decision-Making/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- GenRep -->
+		<article class="publication reveal" data-tags="learning">
+			<div class="thumb"><img src="media/icons/teaser_genrep.png" alt="GenRep teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Generative Models as a Data Source for Multiview Representation Learning</h3>
+				<div class="authors">
+					Ali Jahanian, <span class="me">Xavier Puig</span>, Yonglong Tian, Phillip Isola
+				</div>
+				<div class="venue">International Conference on Learning Representations (ICLR), 2022</div>
+				<div class="links">
+					<a href="https://arxiv.org/pdf/2106.05258.pdf">Paper</a>
+					<a href="https://github.com/ali-design/GenRep">Code</a>
+					<a href="https://ali-design.github.io/GenRep/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Watch-And-Help -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/multiagent.gif" alt="Watch-And-Help teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration</h3>
+				<div class="authors">
+					<span class="me">Xavier Puig</span>, Tianmin Shu, Shuang Li, Ziling Wang, Josh Tenenbaum,
+					Sanja Fidler, Antonio Torralba
+				</div>
+				<div class="venue">
+					<span class="line">Cooperative AI Workshop at NeurIPS, 2020 <span class="badge">Best paper award</span></span>
+					<span class="line">International Conference on Learning Representations (ICLR), 2021 <span class="badge">Spotlight</span></span>
+				</div>
+				<div class="links">
+					<a href="https://arxiv.org/abs/2010.09890">Paper</a>
+					<a href="https://github.com/xavierpuigf/watch_and_help">Code</a>
+					<a href="http://virtual-home.org/watch_and_help">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Activity sketches -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/env_program.png" alt="Activity sketches teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Synthesizing Environment-Aware Activities via Activity Sketches</h3>
+				<div class="authors">
+					Andrew Liao*, <span class="me">Xavier Puig*</span>, Marko Boben, Antonio Torralba, Sanja Fidler
+				</div>
+				<div class="venue">Computer Vision and Pattern Recognition (CVPR), 2019</div>
+				<div class="links">
+					<a href="http://virtual-home.org/paper/env_program.pdf">Paper</a>
+					<a href="https://andrewliao11.github.io/project/env-program/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- ADE20K IJCV -->
+		<article class="publication reveal" data-tags="scenes">
+			<div class="thumb"><img src="media/icons/cover_sceneparsing.jpg" alt="ADE20K teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Semantic Understanding of Scenes through the ADE20K Dataset</h3>
+				<div class="authors">
+					Bolei Zhou, Hang Zhao, <span class="me">Xavier Puig</span>, Tete Xiao, Sanja Fidler,
+					Adela Barriuso, Antonio Torralba
+				</div>
+				<div class="venue">International Journal of Computer Vision (IJCV), 2018</div>
+				<div class="links">
+					<a href="https://people.csail.mit.edu/xavierpuig/documents/publications/ADE20K_IJCV.pdf">Paper</a>
+					<a href="http://groups.csail.mit.edu/vision/datasets/ADE20K/">Dataset</a>
+					<a href="http://sceneparsing.csail.mit.edu">Benchmark</a>
+					<a href="http://sceneparsing.csail.mit.edu/index_challenge.html">Challenge</a>
+					<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a>
+					<a href="http://scenesegmentation.csail.mit.edu">Demo</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- VirtualHome -->
+		<article class="publication reveal" data-tags="embodied">
+			<div class="thumb"><img src="media/icons/virtualhome.png" alt="VirtualHome teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">VirtualHome: Simulating Household Activities via Programs</h3>
+				<div class="authors">
+					<span class="me">Xavier Puig*</span>, Kevin Ra*, Marko Boben*, Jiaman Li, Tingwu Wang,
+					Sanja Fidler, Antonio Torralba
+				</div>
+				<div class="venue">
+					<span>Computer Vision and Pattern Recognition (CVPR), 2018</span>
+					<span class="badge">Oral</span>
+				</div>
+				<div class="links">
+					<a href="https://arxiv.org/pdf/1806.07011.pdf">Paper</a>
+					<a href="http://virtual-home.org">Webpage</a>
+					<button type="button" data-press="press-virtualhome" aria-expanded="false">Press</button>
+					<a href="https://www.youtube.com/watch?v=BB5-N9AIqP8">Talk</a>
+				</div>
+				<div class="press" id="press-virtualhome">
+					<a href="http://news.mit.edu/2018/mit-csail-teaching-chores-artificial-agent-0530"><img src="media/news/mit.png" alt="MIT News" loading="lazy"></a>
+					<a href="http://www.bbc.com/news/av/technology-44319044/the-robots-taking-on-your-housework"><img src="media/news/bbc.png" alt="BBC" loading="lazy"></a>
+					<a href="https://www.wired.com/story/how-to-get-a-robot-to-one-day-do-your-chores/"><img src="media/news/wired.png" alt="Wired" loading="lazy"></a>
+					<a href="https://www.fastcompany.com/40578876/these-researchers-found-an-easier-way-to-teach-robots-housework"><img src="media/news/fastco.png" alt="Fast Company" loading="lazy"></a>
+					<a href="http://www.gizmodo.co.uk/2018/05/researchers-are-training-a-robot-butler-to-do-the-chores-you-hate-in-a-sims-inspired-virtual-house/"><img src="media/news/gizmodo.png" alt="Gizmodo" loading="lazy"></a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Open vocabulary -->
+		<article class="publication reveal" data-tags="scenes">
+			<div class="thumb"><img src="media/icons/openvoc.png" alt="Open vocabulary scene parsing teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Open Vocabulary Scene Parsing</h3>
+				<div class="authors">
+					Hang Zhao, <span class="me">Xavier Puig</span>, Bolei Zhou, Sanja Fidler, Antonio Torralba
+				</div>
+				<div class="venue">International Conference on Computer Vision (ICCV), 2017</div>
+				<div class="links">
+					<a href="https://arxiv.org/pdf/1703.08769.pdf">Paper</a>
+					<a href="http://sceneparsing.csail.mit.edu/openvoc/">Webpage</a>
+				</div>
+			</div>
+		</article>
+
+		<!-- Scene parsing CVPR -->
+		<article class="publication reveal" data-tags="scenes">
+			<div class="thumb"><img src="media/icons/cover_sceneparsing_cvpr2017.png" alt="Scene parsing teaser" loading="lazy"></div>
+			<div>
+				<h3 class="pub-title">Scene Parsing through ADE20K Dataset</h3>
+				<div class="authors">
+					Bolei Zhou, Hang Zhao, <span class="me">Xavier Puig</span>, Sanja Fidler, Adela Barriuso,
+					Antonio Torralba
+				</div>
+				<div class="venue">Computer Vision and Pattern Recognition (CVPR), 2017</div>
+				<div class="links">
+					<a href="https://people.csail.mit.edu/xavierpuig/documents/publications/scene-parse-camera-ready.pdf">Paper</a>
+					<a href="http://groups.csail.mit.edu/vision/datasets/ADE20K/">Dataset</a>
+					<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a>
+					<a href="http://scenesegmentation.csail.mit.edu">Demo</a>
+				</div>
+			</div>
+		</article>
+
+	</div>
+</section>
+
+<!-- ========================================================== experience -->
+<section id="experience">
+	<div class="section-head"><h2>Experience</h2><span class="rule"></span></div>
+	<div class="card reveal">
+		<div class="timeline">
+			<div class="tl-item current">
+				<div class="when">2026.1 — Present</div>
+				<div class="what">Co-founder, Versor</div>
+				<div class="detail">Robotics company using simulation to accelerate robot deployments.</div>
+			</div>
+			<div class="tl-item">
+				<div class="when">2022.10 — 2025.10</div>
+				<div class="what">Research Scientist, FAIR (Meta)</div>
+				<div class="detail">Embodied AI team, working on human-centered embodied intelligence.</div>
+			</div>
+			<div class="tl-item">
+				<div class="when">2016.9 — 2022.9</div>
+				<div class="what">Research Assistant, MIT CSAIL</div>
+				<div class="detail">Advised by Prof. Antonio Torralba.</div>
+			</div>
+			<div class="tl-item">
+				<div class="when">2019.6 — 2019.8</div>
+				<div class="what">Research Intern, Google Cambridge</div>
+				<div class="detail">Contrastive learning. Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna.</div>
+			</div>
+			<div class="tl-item">
+				<div class="when">2017.6 — 2017.8</div>
+				<div class="what">Research Intern, Google Seattle</div>
+				<div class="detail">Mobile computer vision and adaptive inference. Advised by Li Zhang, Yukun Zhu, Maxwell Collins.</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- ============================================================= service -->
+<section id="service">
+	<div class="section-head"><h2>Professional Service</h2><span class="rule"></span></div>
+	<div class="card service reveal">
+		<div class="row">
+			<h3>Conference &amp; Journal Reviewing</h3>
+			<p>CVPR 2018, 2020 · ICCV 2019, 2021 (Outstanding Reviewer) · ECCV 2020 · NeurIPS 2020, 2021 · TVCG · IROS 2021 · IRJC 2021</p>
+		</div>
+		<div class="row">
+			<h3>Workshop Organizing</h3>
+			<p>
+				<a href="https://social-intelligence-human-ai.github.io/">Social Intelligence Workshop</a>, ICRA 2021 ·
+				<a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social Intelligence Gathering</a>, ICLR 2021 ·
+				<a href="http://www.robustvision.net/">Robust Vision Challenge Workshop</a>, ECCV 2020
+			</p>
+		</div>
+		<div class="row">
+			<h3>Seminars</h3>
+			<p>Co-chair of the <a href="https://sites.google.com/view/visionseminar">MIT Vision Seminar</a> (2018–2019) and Chair (2019–2021)</p>
+		</div>
+	</div>
+</section>
+
+</main>
+
+<footer>
+	<div class="wrap footer-inner">
+		<span>© 2018 – 2026 Xavier Puig</span>
+		<a href="http://accessibility.mit.edu">Accessibility</a>
+	</div>
+</footer>
+
+<script>
+/* ------------------------------------------------------------ dark mode */
+(function () {
+	var root = document.documentElement;
+	var stored = null;
+	try { stored = localStorage.getItem('theme'); } catch (e) {}
+	var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+	root.setAttribute('data-theme', stored || (prefersDark ? 'dark' : 'light'));
+
+	document.getElementById('theme-toggle').addEventListener('click', function () {
+		var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+		root.setAttribute('data-theme', next);
+		try { localStorage.setItem('theme', next); } catch (e) {}
+	});
+})();
+
+/* ------------------------------------------------- nav shadow + scrollspy */
+(function () {
+	var nav = document.getElementById('nav');
+	var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+	var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+
+	function onScroll() {
+		nav.classList.toggle('scrolled', window.scrollY > 24);
+
+		var current = null;
+		sections.forEach(function (sec, i) {
+			if (sec && sec.getBoundingClientRect().top <= 120) current = i;
+		});
+		links.forEach(function (a, i) { a.classList.toggle('active', i === current); });
+	}
+
+	onScroll();
+	window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
+/* ------------------------------------------------------------ older news */
+(function () {
+	var btn = document.getElementById('news-toggle');
+	var rows = document.querySelectorAll('.news-item.is-hidden');
+	var open = false;
+
+	btn.addEventListener('click', function () {
+		open = !open;
+		Array.prototype.forEach.call(rows, function (r) {
+			r.style.display = open ? 'grid' : '';
+		});
+		btn.setAttribute('aria-expanded', String(open));
+		btn.querySelector('span').textContent = open ? 'Hide older news' : 'Show older news';
+	});
+})();
+
+/* ------------------------------------------------------ publication tags */
+(function () {
+	var pubs = Array.prototype.slice.call(document.querySelectorAll('#pubs .publication'));
+	var buttons = Array.prototype.slice.call(document.querySelectorAll('#filters button'));
+
+	buttons.forEach(function (btn) {
+		var tag = btn.dataset.filter;
+		var n = tag === 'all'
+			? pubs.length
+			: pubs.filter(function (p) { return p.dataset.tags.split(' ').indexOf(tag) !== -1; }).length;
+		btn.insertAdjacentHTML('beforeend', ' <span class="count">' + n + '</span>');
+
+		btn.addEventListener('click', function () {
+			buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+			pubs.forEach(function (p) {
+				var show = tag === 'all' || p.dataset.tags.split(' ').indexOf(tag) !== -1;
+				p.classList.toggle('filtered-out', !show);
+			});
+		});
+	});
+})();
+
+/* --------------------------------------------------------- press toggles */
+(function () {
+	Array.prototype.forEach.call(document.querySelectorAll('[data-press]'), function (btn) {
+		btn.addEventListener('click', function () {
+			var panel = document.getElementById(btn.dataset.press);
+			var open = panel.classList.toggle('open');
+			btn.setAttribute('aria-expanded', String(open));
+		});
+	});
+})();
+
+/* ---------------------------------------------------------- reveal on scroll */
+(function () {
+	var items = document.querySelectorAll('.reveal');
+	if (!('IntersectionObserver' in window)) {
+		Array.prototype.forEach.call(items, function (el) { el.classList.add('in'); });
+		return;
+	}
+	var io = new IntersectionObserver(function (entries) {
+		entries.forEach(function (e) {
+			if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+		});
+	}, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+
+	Array.prototype.forEach.call(items, function (el) { io.observe(el); });
+})();
+</script>
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -205,668 +1237,7 @@ table td {
 
   ga('create', 'UA-91301919-1', 'auto');
     ga('send', 'pageview');
-
 </script>
 
-<link rel="shortcut icon" href="/files/assets/images/favicon.ico" />
-
-</head>
-<link rel="icon" href="media/xavi.jpg">
-<body style="background-color:whitesmoke;">
-<div class="generalcontainer">
-    <div class="titlesec">
-    <div class="title">
-    	<div class="cont">
-	        <div id="sidebar"><img src="media/xavi.jpg" id="me" width="220" itemprop="photo"></div>
-
-	        <div id="bio">
-	            <div id="biocont" style="position:absolute;top:28px;">
-	                <h1 style="padding-bottom: 6px"><span itemprop="name">Xavier Puig</span></h1>
-
-	                <p style="line-height:30px;">
-			<span> Co-founder at stealth robotics startup </span> <br> 
-			</p>
-
-	                <p style="line-height:22px;">
-	                <a href="mailto:xavierpuigf@gmail.com">xavierpuigf@gmail.com</a><br>
-	                181 Freemont St, San Francisco
-			</p>
-	                <p class="external">
-					<a href="documents/CV_Xavier.pdf" class="first">Resume</a> &bull; 
-					<a href="https://scholar.google.com/citations?user=GbaikvkAAAAJ">Google Scholar</a> &bull; 
-					<a href="https://www.linkedin.com/in/xavierpuigf">LinkedIn</a> &bull;
-					<a href="https://github.com/xavierpuigf">GitHub</a> &bull;
-					<a href="documents/xavier_puig_phd_tesis.pdf">Ph.D. Thesis</a>
-					</p>
-	            </div>
-	        </div>
-    	</div>
-    </div>
-
-    </div>
-
-    <div class="aboutme">
-	    <div style="text-align: justify" class="container" >
-		<h2>About Me</h2>
-		<p> I am the co-founder of Versor, a robotics company using simulation to accelerate robot deployments. Before this, I was a Research Scientist at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, working on Embodied AI. I completed my Ph.D. at the <a href="http://www.csail.mit.edu/"> Computer Science and Artificial Intelligence Laboratory (CSAIL) </a> of <a href="http://web.mit.edu">MIT</a>, advised by Professor <a href="http://web.mit.edu/torralba/www/"> Antonio Torralba</a>. Before that, I obtained a double degree in Computer Science and Telecommunications at the <a href="http://www.cfis.upc.edu/"> CFIS </a> program of <a href="http://www.upc.edu/"> UPC</a>. 
-		<!-- I am funded by La Caixa Fellowship.  -->
-		</p>
-		<!--<p>In the fields of computer vision and machine learning, my research investigates Predictive Vision with the goal to develop methods that anticipate events in the future. My work builds algorithms that learn from large amounts of raw data in order to create rich predictive models.</p> -->
-		<p> 
-		I am interested in building agents that can assist and collaborate with humans. My research focuses in developing agents that can understand and anticipate human goals, and coordinate with them in performing complex tasks. I also study how to represent humans in simulation environments, including generating realistic motions and plausible high-level behaviors.
-		</p>
-		<p>
-		<strong>
-		If you are interested in these areas, and would like to collaborate, or intern in my team, reach out!
-		</strong>
-
-
-		</p>
-
-	    </div>
-    </div>
-    <div class="containerews">
-	    <div class="container">
-    <h2>News</h2>
-
-<!--     <ul style="list-style-type: none; padding-left: 0px">
-	<li> <b> January 2022:</b> We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social AI Virtual Gathering </a>, at ICLR 2021. </li>
-	<li> <b> April 2021:</b> We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social AI Virtual Gathering </a>, at ICLR 2021. </li>
-        <li> <b> February 2021:</b> We are organizing the <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence in Humans and Robots Workshop</a>, to be held at <a href="http://www.icra2021.org/">ICRA'2021</a>. </li>
-        <li> <b> January 2021:</b> <a href="https://openreview.net/forum?id=w_7JMpGZRh0">Watch-And-Help</a> was accepted to <a href="https://iclr.cc/Conferences/2021/">ICLR'2021</a> as a Spotlight presentation.</li>
-	<li> <b> November 2020:</b> <a href="https://arxiv.org/abs/2010.09890">Watch-And-Help</a> was accepted to the <a href="https://www.cooperativeai.com/">Cooperative AI Workshop at NeurIPS 2020</a> as a Best paper award.</li>
-    	<li> <b> October 2020:</b> We released the <a href="https://github.com/xavierpuigf/watch_and_help">code</a> for our <b>Watch-And-Help</b> paper.</li>
-	<li> <b> September 2020:</b> We released the <a href="https://github.com/xavierpuigf/virtualhome">new version of VirtualHome</a>, as well as the <a href="https://github.com/xavierpuigf/virtualhome_unity">Unity Source Code</a>. </li>
-    </ul>
-    <br>	
- -->
-    <table class="newstable">
-		<tr> 
-			<td>  
-				<b> Oct. 2024:</b> We released <a href="https://aihabitat.org/partnr/">PARTNR: A Benchmark for Planning and Reasoning in Embodied Multi-agent Tasks</a>.  
-			</td>
-		</tr>
-		
-		<tr> 
-			<td>  
-				<b> Sept. 2024:</b> I gave a talk about Human Foundation Models for Embodied AI at the <a href="https://human-foundation.github.io/workshop-eccv-2024/">Human Foundation Models for 3D Humans</a> workshop at ECCV'2024.  
-			</td>
-		</tr>
-		
-		<tr> 
-			<td>  
-				<b> July 2024:</b> <a href="https://lijiaman.github.io/projects/chois/">CHOIS</a> and <a href="https://soyeonm.github.io/SIF_webpage/">SIF</a> were accepted to ECCV'2024. 
-			</td>
-		</tr>
-		
-		<tr> 
-			<td>  
-				<b> Oct. 2023:</b> Our paper <a href="https://virtualhumans.mpi-inf.mpg.de/origin_2/"> Generating Continual Motion in Diverse 3D Scenes, </a> was accepted to 3DV'2024. 
-			</td>
-		</tr>
-		<tr> 
-			<td>  
-				<b> Oct. 2023:</b> We released <a href="https://aihabitat.org/habitat3/">Habitat 3.0</a>. 
-			</td>
-		</tr>
-		<tr class="hidden-row"> 
-			<td>  
-				<b> Jan. 2023:</b> Our work <a href="https://github.com/xavierpuigf/online_watch_and_help"> NOPA</a> was accepted to ICRA'2023. 
-			</td>
-		</tr>
-		<tr class="hidden-row"> 
-			<td>  
-				<b> Oct. 2022:</b> I joined the Embodied AI team at <a href="https://ai.facebook.com/research/#fundamental-and-applied"> FAIR </a>, to work in human-centered Embodied Intelligence. 
-			</td>
-		</tr>
-
-		<tr class="hidden-row"> 
-			<td>  <b> Sep. 2022:</b> 
-				I defended my Ph.D. Thesis. 
-			</td>
-		</tr>
-
-		<tr class="hidden-row"> 
-			<td>  <b> Jan. 2022:</b>   <a href="https://ali-design.github.io/GenRep/"> GenRep </a> was accepted to ICLR 2022. 
-			</td>
-		</tr>
-		<tr class="hidden-row"> 
-			<td> <b> Apr. 2021:</b>  We are organizing the <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/"> Social AI Virtual Gathering </a>, at ICLR 2021. 
-			</td>
-		</tr>
-		<tr class="hidden-row"> 
-			<td> <b> Feb. 2021:</b>  </div> We are organizing the <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence in Humans and Robots Workshop</a>, to be held at <a href="http://www.icra2021.org/">ICRA'2021</a>. 
-			</td>
-		</tr>
-		<tr class="hidden-row"> 
-			<td> <b> Jan. 2021:</b>  <a href="https://openreview.net/forum?id=w_7JMpGZRh0">Watch-And-Help</a> was accepted to <a href="https://iclr.cc/Conferences/2021/">ICLR'2021</a> as a Spotlight presentation.
-			</td>
-		</tr>
-		<tr class="hidden-row">
-			<td> <b> Nov. 2020:</b>   <a href="https://arxiv.org/abs/2010.09890">Watch-And-Help</a> was accepted to the <a href="https://www.cooperativeai.com/">Cooperative AI Workshop at NeurIPS 2020</a> as a Best paper award.
-			</td>
-		</tr>
-		<tr class="hidden-row">
-			<td> <b> Oct. 2020:</b>  We released the <a href="https://github.com/xavierpuigf/watch_and_help">code</a> for our <b>Watch-And-Help</b> paper.
-			</td>
-		</tr>
-		<tr class="hidden-row"> 
-			<td><b> Sep. 2020:</b>  We released the <a href="https://github.com/xavierpuigf/virtualhome">new version of VirtualHome</a>, as well as the <a href="https://github.com/xavierpuigf/virtualhome_unity">Unity Source Code</a>. 
-			</td>
-		</tr>
-    </table>
-
-	<p id="news-link">Show Older News </p>
-	<script>
-		var showOlderNews = false;
-	
-		document.getElementById('news-link').addEventListener('click', function() {
-		  var hiddenRows = document.querySelectorAll('.hidden-row');
-	
-		  hiddenRows.forEach(function(row) {
-			row.style.display = showOlderNews ? 'none' : 'table-row';
-		  });
-	
-		  showOlderNews = !showOlderNews;
-		  this.textContent = showOlderNews ? 'Hide Older News' : 'Show Older News';
-		});
-	  </script>
-	
-    </div>
-</div>
-<div class="containerpub">
- <div class="container">
-    <h2>Publications</h2>
-	<div class="publication">
-		<div class="imgcont">
-			<img src="media/icons/partnr.png" class="publogo">
-		</div>
-		<div class="papercont">
-			<strong> PARTNR: A Benchmark for Planning and Reasoning
-				in Embodied Multi-agent Tasks  </strong> <br> 
-
-
-			<div class="authors">
-				<span>Matthew Chang, 
-				</span><span>Gunjan Chhablani, 
-				</span><span>Alexander Clegg, 
-				</span><span>Mikael Dallaire Cote, 
-				</span><span>Ruta Desai, 
-				</span><span>Michal Hlavac,
-				</span><span>Vladimir Karashchuk, 
-				</span><span>Jacob Krantz, 
-				</span><span>Roozbeh Mottaghi, 
-				</span><span>Priyam Parashar,
-				</span><span>Siddharth Patki, 
-				</span><span>Ishita Prasad,
-				</span><span>Xavier Puig, 
-				</span><span>Akshara Rai, 
-				</span><span>Ram Ramrakhya, 
-				</span><span>Daniel Tran, 
-				</span><span>Joanne Truong, 
-				</span><span>John M. Turner, 
-				</span><span>Eric Undersander
-				</span><span>Tsung-Yen Yang</span>
-			</div>
-			Preprint <br>
-			<span class="links">
-				<a href="https://arxiv.org/pdf/2411.00081">Paper</a> 
-			</span>
-		
-
-		<span class="links">
-			<a href="https://aihabitat.org/partnr/">Webpage</a> 
-		</span>
-			
-			</div>
-	</div>
-
-
-	<div class="publication">
-		<div class="imgcont">
-			<video autoplay loop muted playsinline class="videopublogo">
-				<source src="https://lijiaman.github.io/projects/chois/videos/teaser_video_merged.mp4" type="video/mp4">
-			</video>
-		</div>
-		<div class="papercont">
-			<strong> Controllable human-object interaction synthesis  </strong> <br> 
-
-
-			<div class="authors">
-				<span>  Jiaman Li</span>,
-				<span>  Alex Clegg</span>,
-				<span>  Roozbeh Mottaghi</span>,
-				
-				<span>  Jiajun Wu</span>,
-				<span class="me">  Xavier Puig†</span>,
-				<span>Karen Liu†</span>.
-			</div>
-			In Proc. European Conference of Computer Vision (ECCV), 2024 -  <div class="highlightblob"> Oral </div> <br>
-			<span class="links">
-				<a href="https://arxiv.org/pdf/2312.03913">Paper</a> 
-			</span>
-		
-
-		<span class="links">
-			<a href="https://lijiaman.github.io/projects/chois/">Webpage</a> 
-		</span>
-			
-			</div>
-	</div>
-	<div class="publication">
-		<div class="imgcont">
-			<img src="media/icons/sif_motivation.png" class="publogo">
-		</div>
-		<div class="papercont">
-			<strong> Situated Instruction Following  </strong> <br> 
-
-
-			<div class="authors">
-				<span> So Yeon Min</span>,
-				<span class="me"> Xavier Puig</span>,
-				<span> Devendra Singh Chaplot </span>,
-				<span>Tsung-Yen Yang</span> 
-				<span>Akshara Rai</span>
-				<span>Priyam Parashar</span>
-				<span>Ruslan Salakhutdinov</span>
-				<span>Yonatan Bisk</span>
-				<span>Roozbeh Mottaghi</span>
-				
-			</div>
-			In Proc. European Conference of Computer Vision (ECCV), 2024  <br>
-			<span class="links">
-				<a href="https://arxiv.org/abs/2407.12061">Paper</a> 
-			</span>
-		
-
-		<span class="links">
-			<a href="https://soyeonm.github.io/SIF_webpage/">Webpage</a> 
-		</span>
-			
-			</div>
-	</div>
-
-	<div class="publication">
-		<div class="imgcont">
-			<img src="media/icons/habitat3.gif" class="publogo">
-		</div>
-		<div class="papercont">
-			<strong> Habitat 3.0: A Co-Habitat for Humans, Avatars and Robots  </strong> <br> 
-
-
-			<div class="authors">
-				<span class="me">  Xavier Puig∗</span>, 
-				<span>Eric Undersander∗</span>,
-				<span>Andrew Szot∗</span>,
-				<span>Mikael Dallaire Cote∗</span>,
-				<span>Tsung-Yen Yang∗</span>, 
-				<span>Ruslan Partsey∗</span>,
-				<span>Ruta Desai∗</span>,
-				<span>Alexander William Clegg∗</span>,
-				<span>Michal Hlavac</span>,
-				<span>So Yeon Min</span>,
-				<span>Vladimír Vondruš</span>,
-				<span>Theophile Gervet</span>,
-				<span>Vincent-Pierre Berges</span>,
-				<span>John M. Turner</span>,
-				<span>Oleksandr Maksymets</span>,
-				<span>Zsolt Kira</span>,
-				<span>Mrinal Kalakrishnan</span>,
-				<span>Jitendra Malik</span>,
-				<span>Devendra Singh Chaplot</span>,
-				<span>Unnat Jain</span>,
-				<span>Dhruv Batra</span>,
-				<span>Akshara Rai†</span>,
-				<span>Roozbeh Mottaghi†</span>.
-			</div>
-			International Conference on Learning Representations (ICLR), 2024  <br>
-			<span class="links">
-				<a href="https://ai.meta.com/static-resource/habitat3">Paper</a> 
-			</span>
-		
-
-		<span class="links">
-			<a href="https://aihabitat.org/habitat3/">Webpage</a> 
-		</span>
-			
-			</div>
-	</div>
-
-		<div class="publication">
-			<div class="imgcont">
-				<img src="media/icons/vide_motionsin.gif" class="publogo">
-			</div>
-			<div class="papercont">
-				<strong> Generating Continual Motion in Diverse 3D Scenes </strong> <br> 
-
-
-				<div class="authors">
-					<span> Aymen Mir </span>,
-					<span class="me"> Xavier Puig </span>,
-					<span> Angjoo Kanazawa </span>,
-					<span> Gerard Pons-Moll </span>.
-				</div>
-				In Proc. International Conference on 3D Vision (3DV), 2024 <br>
-				<span class="links">
-					<a href="https://arxiv.org/pdf/2304.02061.pdf">Paper</a> 
-				</span>
-			
-			<span class="links">
-				<a href="https://github.com/xavierpuigf/online_watch_and_help">Code</a> 
-			</span>
-			<span class="links">
-				<a href="https://www.tshu.io/online_watch_and_help/">Webpage</a> 
-			</span>
-				
-			<span class="links">
-				<a href="https://youtu.be/Oawo9pynPL0">Video</a> 
-			</span>
-				</div>
-		</div>
-
-        <div class="publication">
-            <div class="imgcont">
-                <img src="media/icons/teaser_NOPA.png" class="publogo">
-            </div>
-            <div class="papercont">
-                <strong> NOPA: Neurally-guided Online Probabilistic Assistance
-                    for Building Socially Intelligent Home Assistants </strong> <br> 
-
-
-                <div class="authors">
-                    <span class="me"> Xavier Puig* </span>,
-                    <span>Tianmin Shu*</span>,
-                    <span> Josh Tenenbaum </span>,
-                    <span> Antonio Torralba </span>.
-                </div>
-                 In Proc. IEEE International Conference on Robotics and Automation (ICRA), 2023 <br>
-                <span class="links">
-                    <a href="documents/publications/NOPA.pdf">Paper</a> 
-                </span>
-		    
-		<span class="links">
-                    <a href="https://github.com/xavierpuigf/online_watch_and_help">Code</a> 
-                </span>
-		<span class="links">
-                    <a href="https://www.tshu.io/online_watch_and_help/">Webpage</a> 
-                </span>
-		    
-		<span class="links">
-                    <a href="https://youtu.be/Oawo9pynPL0">Video</a> 
-                </span>
-            </div>
-        </div>
-        <div class="publication">
-			<div class="imgcont">
-			    <img src="media/icons/teaser_lmagent.png" class="publogo">
-			</div>
-			<div class="papercont">
-				<strong>  Pre-Trained Language Models for Interactive Decision-Making </strong> <br> 
-
-
-				<div class="authors">
-					<span> Shuang Li
-					</span>,<span class="me"> Xavier Puig
-					</span>,<span> Chris Paxton
-					</span>,<span> Yilun Du
-					</span>,<span> Clinton Wang
-					</span>,<span> Linxi Fan
-					</span>,<br><span> Tao Chen
-					</span>,<span> De-An Huang
-					</span>,<span> Ekin Akyurek
-					</span>,<span> Anima Anandkumar
-					</span>,<span> Jacob Andreas
-					</span>,<br><span> Igor Mordatch
-					</span>,<span> Antonio Torralba
-					</span>,<span> Yuke Zhu </span>
-				</div>
-
-				In Proc. Neural Information Processing Systems  (NeurIPS), 2022 -  <div class="highlightblob">  Oral </div> <br>
-				<span class="links">
-					<a href="https://arxiv.org/abs/2202.01771">Paper</a> 
-					<a href="https://github.com/ShuangLI59/Pre-Trained-Language-Models-for-Interactive-Decision-Making">Code</a> 
-					<a href="https://shuangli-project.github.io/Pre-Trained-Language-Models-for-Interactive-Decision-Making/">Webpage</a> 
-				</span>
-			</div>
-        </div>
-        <div class="publication">
-			<div class="imgcont">
-			    <img src="media/icons/teaser_genrep.png" class="publogo">
-			</div>
-			<div class="papercont">
-				<strong> Generative Models as a Data Source for Multiview Representation Learning </strong> <br> 
-
-
-				<div class="authors">
-					<span> Ali Jahanian</span>,
-					<span class="me">Xavier Puig</span>,
-					<span> Yonglong Tian</span>,
-					<span> Phillip Isola</span>.
-				</div>
-				International Conference on Learning Representations (ICLR), 2022 <br>
-				<span class="links">
-					<a href="https://arxiv.org/pdf/2106.05258.pdf">Paper</a> 
-					<a href="https://github.com/ali-design/GenRep">Code</a> 
-					<a href="https://ali-design.github.io/GenRep/">Webpage</a> 
-				</span>
-			</div>
-        </div>
-
-        <div class="publication">
-			<div class="imgcont">
-			    <img src="media/icons/multiagent.gif" class="publogo">
-			</div>
-			<div class="papercont">
-				<strong> Watch-And-Help: A Challenge for Social Perception and Human-AI Collaboration </strong> <br> 
-
-
-				<div class="authors">
-					<span class="me">Xavier Puig</span>,
-					<span> Tianmin Shu</span>,
-					<span> Shuang Li</span>,
-					<span> Ziling Wang</span>,
-					<span> Josh Tenenbaum</span>,
-					<span> Sanja Fidler</span>,
-					<span>Antonio Torralba</span>.
-				</div>
-				Cooperative AI Workshop at NeurIPS, 2020 -  <div class="highlightblob">  Best paper award </div><br>
-				International Conference on Learning Representations (ICLR), 2021 -  <div class="highlightblob">  Spotlight </div><br>
-				<span class="links">
-					<a href="https://arxiv.org/abs/2010.09890">Paper</a> 
-					<a href="https://github.com/xavierpuigf/watch_and_help">Code</a> 
-					<a href="http://virtual-home.org/watch_and_help">Webpage</a> 
-				</span>
-			</div>
-        </div>
-        <div class="publication">
-			<div class="imgcont">
-			    <img src="media/icons/env_program.png" class="publogo">
-			</div>
-			<div class="papercont">
-			<strong>Synthesizing Environment-Aware Activities via Activity Sketches</strong> <br> 
-
-			<div class="authors">
-				<span>Andrew Liao*</span>,
-				<span class="me">Xavier Puig*</span>,
-				<span>Marko Boben</span>,
-				<span>Antonio Torralba</span>.
-				<span>Sanja Fidler</span>,
-			</div>
-			In Proc. Computer Vision and Pattern Recognition (CVPR), 2019.  <br>
-
-			<span class="links">
-				<a href="http://virtual-home.org/paper/env_program.pdf">Paper</a> 
-				<a href="http://virtual-home.org/paper/env_program.pdf">Code</a> 
-				<a href="https://andrewliao11.github.io/project/env-program/">Webpage</a> 
-			</span>
-			</div>
-        </div>
-        <div class="publication">
-			<div class="imgcont">
-			<img src="media/icons/cover_sceneparsing.jpg" class="publogo">
-			</div>
-			<div class="papercont">
-			<strong>Semantic Understanding of Scenes through ADE20K Dataset</a></strong> <br> 
-
-			<div class="authors">
-				<span>Bolei Zhou</span>,
-				<span>Hang Zhao</span>,
-				<span class="me">Xavier Puig</span>,
-				<span>Tete Xiao</span>,
-				<span>Sanja Fidler</span>,
-				<span>Adela Barriuso</span>,
-				<span>Antonio Torralba</span>.
-			</div>
- 
-			International Journal on Computer Vision (IJCV), 2018.  <br>
-			<span class="links">
-				<a href="https://people.csail.mit.edu/xavierpuig/documents/publications/ADE20K_IJCV.pdf">Paper</a> 
-				<a href="http://groups.csail.mit.edu/vision/datasets/ADE20K/">Dataset</a> 
-				<a href="http://sceneparsing.csail.mit.edu">Benchmark Page</a> 
-				<a href="http://sceneparsing.csail.mit.edu/index_challenge.html">Challenge Page</a>  
-				<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a> 
-				<a href="http://scenesegmentation.csail.mit.edu">Demo</a> 
-			</span>
-			</div>
-        </div>
-        <div class="publication">
-			<div class="imgcont">
-			<img src="media/icons/virtualhome.png" class="publogo" width="100" >
-			</div>
-			<div class="papercont">
-			<strong>VirtualHome: Simulating Household Activities via Programs</a></strong> <br> 
-			<div class="authors">
-
-			<span class="me">Xavier Puig*</span>,
-			<span>Kevin Ra*</span>,
-			<span>Marko Boben*</span>,
-			<span>Jiaman Li</span>,
-			<span>Tingwu Wang</span>,
-			<span>Sanja Fidler</span>,
-			<span>Antonio Torralba</span>,
-			</div>
-
-			In Proc. Computer Vision and Pattern Recognition (CVPR), 2018 - <div class="highlightblob">  Oral </div> <br>
-			<span class="links">
-				<a href="https://arxiv.org/pdf/1806.07011.pdf">Paper</a> 
-				<a href="http://virtual-home.org">Webpage</a> 
-				<a data-toggle="collapse" data-target="#mediavirtualhome">Press</a> 
-				<a href="https://www.youtube.com/watch?v=BB5-N9AIqP8">Talk</a> 
-			</span>
-
-			</div>
-				<div id="mediavirtualhome" class="collapse news" style="margin-top: 10px">
-					<a href="http://news.mit.edu/2018/mit-csail-teaching-chores-artificial-agent-0530"><img src='media/news/mit.png'></a>
-					<a href="http://www.bbc.com/news/av/technology-44319044/the-robots-taking-on-your-housework"><img src='media/news/bbc.png'></a>
-					<a href="https://www.wired.com/story/how-to-get-a-robot-to-one-day-do-your-chores/"><img src='media/news/wired.png'></a>
-					<a href="https://www.fastcompany.com/40578876/these-researchers-found-an-easier-way-to-teach-robots-housework"><img src='media/news/fastco.png'></a>
-					<a href="http://www.gizmodo.co.uk/2018/05/researchers-are-training-a-robot-butler-to-do-the-chores-you-hate-in-a-sims-inspired-virtual-house/"><img src='media/news/gizmodo.png'></a>
-
-				</div>
-        </div>
-        <div class="publication">
-			<div class="imgcont">
-			<img src="media/icons/openvoc.png" class="publogo">
-			</div>
-			<div class="papercont">
-			<strong>Open Vocabulary Scene Parsing</a></strong> <br> 
-			<div class="authors">
-				<span>Hang Zhao</span>,
-				<span class="me">Xavier Puig</span>,
-				<span>Bolei Zhou</span>,
-				<span>Sanja Fidler</span>,
-				<span>Antonio Torralba</span>.
-			</div>
-			 In Proc. International Conference in Computer Vision (ICCV), 2017.  <br>
-			<span class="links">
-				<a href="https://arxiv.org/pdf/1703.08769.pdf">Paper</a> 
-				<a href="http://sceneparsing.csail.mit.edu/openvoc/">Page</a> 
-			</span>
-			</div>
-        </div>
-
-        <div class="publication">
-			<div class="imgcont">
-			<img src="media/icons/cover_sceneparsing_cvpr2017.png" class="publogo" >
-			</div>
-			<div class="papercont">
-			<strong>Scene Parsing through ADE20K Dataset</strong> <br> 
-			<div class="authors">
-				<span>Bolei Zhou</span>,
-				<span>Hang Zhao</span>,
-				<span class="me">Xavier Puig</span>,
-				<span>Sanja Fidler</span>,
-				<span>Adela Barriuso</span>,
-				<span>Antonio Torralba</span>.
-			</div>
-			In Proc. Computer Vision and Pattern Recognition (CVPR), 2017. <br>
-			<span class="links">
-				<a href="https://people.csail.mit.edu/xavierpuig/documents/publications/scene-parse-camera-ready.pdf">Paper</a> 
-				<a href="http://groups.csail.mit.edu/vision/datasets/ADE20K/">Dataset</a> 
-				<a href="https://github.com/CSAILVision/sceneparsing">Toolkit</a> 
-				<a href="http://scenesegmentation.csail.mit.edu">Demo</a> 
-			</span>
-        </div>
-		</div>
-    </div>
-</div>
-
-
-
-	<div class="containerexp">
-		<div class="container">
-			<h2>Experience</h2>
-	
-			<table class="experiencetable">
-	
-			<tr> 
-				<td class="date" style="width:140px"> 2022.10 - Present: </td> <td> Research Scientist at FAIR <br> Working on the Embodied AI Team </a> </td>
-			</tr>
-			
-			<tr> 
-				<td class="date" style="width:140px"> 2016.9 - 2022.9: </td> <td> Research Assistant, MIT Computer Science and Artificial Intelligence Laboratory <br> Advised by Prof. Antonio Torralba </a> </td>
-	
-			</tr>
-	
-			<tr> 
-				<td class="date" style="width:140px"> 2019.6 - 2019.8: </td> <td> Research Intern, Google Cambridge working in Contrastive Learning <br> Advised by Dilip Krishnan, Aaron Maschinot, Aaron Sarna </a> </td>
-			</tr>
-	
-			<tr> 
-				<td class="date" style="width:140px"> 2017.6 - 2017.8: </td> <td> Research Intern, Google Seattle, working in Mobile Computer Vision and Adaptive Inference. <br> Advised by Li Zhang, Yukun Zhu, Maxwell Collins </td>
-			</tr>
-			</table>
-			<ul>
-	
-				
-			</ul>
-	
-		</div>
-	</div>
-	<div>
-		
-<div class="profservice">
-	
-	<div class="container">
-	    <h2>Professional Service</h2>
-	    <ul>
-	        <li> Conference/Journal Reviewer <br> CVPR 2018, 2020; ICCV 2019, 2021 (Outstanding Reviewer); ECCV 2020; NeurIPS 2020, 2021; TVCG; IROS 2021; IRJC 2021</li>
-	        <li> Workshop Organizer <br> <a href="https://social-intelligence-human-ai.github.io/">Social Intelligence Workshop </a>, ICRA 2021 <br> <a href="https://social-intelligence-human-ai.github.io/ICLRSocial/">Social Intelligence Gathering </a>, ICLR 2021. <br> <a href="http://www.robustvision.net/">Robust Vision Challenge Workshop</a>, ECCV 2020. </li>
-	        <li> Co-chair of the <a href="https://sites.google.com/view/visionseminar"> MIT Vision Seminar</a> (2018-2019) and Chair (2019-2021) 
-	    </ul>
-
-	</div>
-</div>
-<br>
-</div>
-<br>
-<footer style="height: 60px" class="page-footer font-small blue">
-    <div class="footer-copyright text-center py-3">
-	<span style="color: gray; margin: 20px">
-	    Copyright &copy; 2018 - 2023
-	</span>
-	<a href="http://accessibility.mit.edu "> Accessibility </a>
-    </div>
-</footer>
 </body>
 </html>
